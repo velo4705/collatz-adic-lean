@@ -7,3 +7,6 @@
 .opencode/
 .openresearch/
 opencode.json
+
+__pycache__/
+*.pyc
