@@ -1,0 +1,9 @@
+.lake/
+*.olean
+*.ilean
+*.c
+*.bc
+*.o
+.opencode/
+.openresearch/
+opencode.json
