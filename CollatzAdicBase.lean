@@ -1,5 +1,7 @@
 import CollatzAdicBase.Basic
 import CollatzAdicBase.FuelLaw
+import CollatzAdicBase.RationalDescent
+import CollatzAdicBase.Refueling
 import CollatzAdicBase.AlternatingGlide
 import CollatzAdicBase.LatentSaturation
 import CollatzAdicBase.Axioms

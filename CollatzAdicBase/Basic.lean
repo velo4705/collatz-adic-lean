@@ -1,15 +1,12 @@
-import Init
+import Mathlib.Logic.Function.Iterate
 
 universe u
 
 namespace Nat
 
-/-- Iterate a function `n` times. This is the definition used by Mathlib
-    (`Mathlib.Logic.Function.Iterate`) and is provided here so that the files of
-    this project stay self-contained and depend only on Lean's core library. -/
-def iterate {α : Sort u} (op : α → α) : Nat → α → α
-  | 0, a => a
-  | succ k, a => iterate op k (op a)
+-- `Nat.iterate` is provided by Mathlib (`Mathlib.Logic.Function.Iterate`) with
+-- exactly this definition.  Importing it here (rather than redefining it)
+-- keeps the module compatible with `RationalDescent`, which imports Mathlib.
 
 /-- The other recursion equation: applying `f` once before `n` iterations is
     the same as applying it once after. -/
