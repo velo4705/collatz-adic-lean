@@ -1,9 +1,12 @@
-CollatzAdicBase — complete #print axioms audit (seven Layer-2 modules)
+CollatzAdicBase — complete #print axioms audit (eight verified modules)
 Verified: lake -K jobs=1 build completed with zero errors and zero warnings.
 Audited modules: RationalDescent, AlternatingGlide, FuelLaw, LatentSaturation,
-                Refueling, CycleExclusion, StoppingTimeDensity.
+                Refueling, CycleExclusion, StoppingTimeDensity, GlideMarkovChain.
 Every theorem depends only on Lean core axioms: propext, Classical.choice, Quot.sound.
 Zero sorryAx and zero project-specific axioms.
+Theorem count: 174 proven theorems/lemmas in total (171 across the eight audited
+modules and 3 in Basic.lean); 30 of them are in the new GlideMarkovChain module
+(17 theorems and 13 lemmas), of which 10 principal results are audited below.
 
 'CollatzAdicBase.FuelLaw.iterate_shortcut_formula' depends on axioms: [propext, Quot.sound]
 'CollatzAdicBase.FuelLaw.iterate_shortcut_odd' depends on axioms: [propext, Quot.sound]
@@ -54,3 +57,13 @@ Zero sorryAx and zero project-specific axioms.
 'CollatzAdicBase.StoppingTimeDensity.template_stop' depends on axioms: [propext, Classical.choice, Quot.sound]
 'CollatzAdicBase.StoppingTimeDensity.cert8_stop' depends on axioms: [propext, Classical.choice, Quot.sound]
 'CollatzAdicBase.StoppingTimeDensity.k8_partition' does not depend on any axioms
+'CollatzAdicBase.GlideMarkovChain.glide_identity' depends on axioms: [propext, Quot.sound]
+'CollatzAdicBase.GlideMarkovChain.glideC_bound' depends on axioms: [propext, Quot.sound]
+'CollatzAdicBase.GlideMarkovChain.glide_drop' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CollatzAdicBase.GlideMarkovChain.parityMap_injective_mod' depends on axioms: [propext, Quot.sound]
+'CollatzAdicBase.GlideMarkovChain.glideVal_child' depends on axioms: [propext, Quot.sound]
+'CollatzAdicBase.GlideMarkovChain.heavyCount_tilt' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CollatzAdicBase.GlideMarkovChain.heavyCount_exp' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CollatzAdicBase.GlideMarkovChain.survF_card_le_heavy' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CollatzAdicBase.GlideMarkovChain.odd_survivor_decay' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CollatzAdicBase.GlideMarkovChain.true_survivor_decay' depends on axioms: [propext, Classical.choice, Quot.sound]

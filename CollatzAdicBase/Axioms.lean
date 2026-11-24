@@ -5,6 +5,7 @@ import CollatzAdicBase.AlternatingGlide
 import CollatzAdicBase.LatentSaturation
 import CollatzAdicBase.CycleExclusion
 import CollatzAdicBase.StoppingTimeDensity
+import CollatzAdicBase.GlideMarkovChain
 
 -- Axiom audit: every theorem below should depend only on Lean's core axioms
 -- (propext, Classical.choice, Quot.sound), with no sorryAx and no
@@ -66,3 +67,15 @@ import CollatzAdicBase.StoppingTimeDensity
 #print axioms CollatzAdicBase.StoppingTimeDensity.template_stop
 #print axioms CollatzAdicBase.StoppingTimeDensity.cert8_stop
 #print axioms CollatzAdicBase.StoppingTimeDensity.k8_partition
+
+-- Glide Markov chain module (Paper 8)
+#print axioms CollatzAdicBase.GlideMarkovChain.glide_identity
+#print axioms CollatzAdicBase.GlideMarkovChain.glideC_bound
+#print axioms CollatzAdicBase.GlideMarkovChain.glide_drop
+#print axioms CollatzAdicBase.GlideMarkovChain.parityMap_injective_mod
+#print axioms CollatzAdicBase.GlideMarkovChain.glideVal_child
+#print axioms CollatzAdicBase.GlideMarkovChain.heavyCount_tilt
+#print axioms CollatzAdicBase.GlideMarkovChain.heavyCount_exp
+#print axioms CollatzAdicBase.GlideMarkovChain.survF_card_le_heavy
+#print axioms CollatzAdicBase.GlideMarkovChain.odd_survivor_decay
+#print axioms CollatzAdicBase.GlideMarkovChain.true_survivor_decay

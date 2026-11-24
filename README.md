@@ -1,9 +1,11 @@
 # collatz-adic-lean
 
 Kernel-checked Lean 4 formalizations surrounding the "Trailing Ones and
-High-Altitude Backbones" papers.  Five verified modules are exported together
+High-Altitude Backbones" papers.  Eight verified modules are exported together
 from the single root `CollatzAdicBase` and audited with `#print axioms` during
-every build.
+every build.  The library proves 174 theorems/lemmas in total (171 in the eight
+audited modules, 3 in `Basic.lean`) with zero `sorry` and zero project-specific
+axioms.
 
 See [CORRIGENDUM.md](CORRIGENDUM.md) for the step-index correction in Lemma 3
 ($n_0 = 3$: the value 1 is reached at step 7, not step 6). A revised version of
@@ -32,7 +34,10 @@ anywhere: the full axiom audit is recorded in
   exclusion, cycle-sum identity and kernel-checked small-cycle checks (Paper 6).
 - `CollatzAdicBase/StoppingTimeDensity.lean` — two-block drift identity and
   stopping-time residue-class certificates (Paper 7).
-- `CollatzAdicBase/Axioms.lean` — `#print axioms` audit over all seven modules,
+- `CollatzAdicBase/GlideMarkovChain.lean` — accelerated parity-vector branching,
+  exact trajectory product bound, Terras injectivity and exponential survivor
+  density decay (Paper 8).  30 theorems/lemmas, including the main density bound.
+- `CollatzAdicBase/Axioms.lean` — `#print axioms` audit over all eight modules,
   run during `lake build`.
 
 ## Results
@@ -90,6 +95,25 @@ For `n_alt k = (2^(2k+3)+1)/3`, `k ≥ 1`:
   $d \mid 2^E - 3^M$;
 - `three_free_preserved` and `ratStep_valid`: validity and 3-freeness are
   preserved, so every cycle lives at a 3-free home denominator.
+
+### Glide Markov chain (Paper 8, v1.2.0)
+
+For the accelerated half-step $S(n)=n/2$ (even) or $(3n+1)/2$ (odd), with
+$w_K(n)$ counting odd steps:
+
+- `glide_identity`: $2^K S^K(n)=3^{w_K(n)}n+c_K(n)$ with $0\le c_K<3^K$;
+  `glide_drop`: $3^{w_K(n)}<2^K$ and $n\ge3^K$ imply $S^K(n)<n$.
+- `parityMap_injective_mod` and `glideVal_child`: the $K$-bit parity vector
+  determines $r\bmod 2^K$, and the two children $r,r+2^K$ satisfy
+  $S^K(r+2^K)=S^K(r)+3^{w_K(r)}$ (one odd step, one halving).
+- `heavyCount_tilt`: $\#\{b\in\{0,1\}^K: \mathrm{wt}(b)\ge m\}\cdot 2^m\le3^K$;
+  `survF_card_le_heavy` transfers this to residue classes by injectivity.
+- `true_survivor_decay`: at $K=8t$, the number of odd survivors satisfies
+  $\#\text{survivors}\cdot2\cdot32^t\le6561^t$, i.e.
+  $\delta(8t)\le(6561/8192)^t=e^{-0.02775\ldots K}$ — a kernel-checked Terras
+  density theorem in constructive form.  The exact $K=1,\dots,16$ comparison
+  against Chernoff/Hoeffding bounds is in `analysis/glide_markov_chain.py` and
+  `artifacts/glide_markov_chain.json`.
 
 ## Corrigendum
 
