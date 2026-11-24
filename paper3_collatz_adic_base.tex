@@ -210,6 +210,7 @@ from \texttt{CollatzAdicBase/RationalDescent.lean}.
 
 \begin{lemma}[gcd divides three]
 \label{thm:gcd3}
+\leavevmode\par\vspace{0.3em}
 \begin{lstlisting}
 lemma gcd_dvd_three {a d : ℕ} (hcop : Nat.Coprime a d) :
     Nat.gcd (3 * a + d) d ∣ 3
@@ -229,6 +230,7 @@ $g=1\vee g=3$; this dichotomy drives the rest of the section.
 
 \begin{lemma}[Lemma 2.1]
 \label{thm:stab}
+\leavevmode\par\vspace{0.3em}
 \begin{lstlisting}
 lemma lemma_2_1_stability (p : ℕ) (hp : p.Prime) (hp3 : p ≠ 3)
     {a d : ℕ} (hcop : Nat.Coprime a d) :
@@ -248,6 +250,7 @@ $\operatorname{padicValNat}$ as a factorization and applying
 
 \begin{lemma}[Lemma 2.2]
 \label{thm:one3}
+\leavevmode\par\vspace{0.3em}
 \begin{lstlisting}
 lemma lemma_2_2_one_three_per_odd_step {a d : ℕ} (_ha : Odd a) (_hdpos : 0 < d)
     (hcop : Nat.Coprime a d) (h3d : 3 ∣ d) :
@@ -267,6 +270,7 @@ the prime $3$ equals $1$.
 
 \begin{lemma}[Lemma 2.3]
 \label{thm:halving}
+\leavevmode\par\vspace{0.3em}
 \begin{lstlisting}
 lemma lemma_2_3_forced_halving {a d : ℕ} (ha : Odd a) (hd : Odd d)
     (hdpos : 0 < d) (_hcop : Nat.Coprime a d) :
@@ -285,6 +289,7 @@ Writing $m=gt$ gives $3a+d=g(2t)$, hence $(3a+d)/g=2t$ by
 
 \begin{lemma}[Lemma 2.4 and Corollary 2.5]
 \label{thm:cycles}
+\leavevmode\par\vspace{0.3em}
 \begin{lstlisting}
 lemma lemma_2_4_and_cor_2_5_three_free_cycles {x : State} (hx : Valid x) {L : ℕ}
     (hL : 1 ≤ L) (hcycle : orbit x L = x) :
@@ -310,6 +315,7 @@ the orbit of $x$.  The main theorem is:
 
 \begin{theorem}[Theorem 1]
 \label{thm:descent}
+\leavevmode\par\vspace{0.3em}
 \begin{lstlisting}
 theorem theorem_1_pure_three_power_descent (a k : ℕ) (ha : 0 < a)
     (hcop : Nat.Coprime a (3 ^ k)) :
@@ -391,6 +397,7 @@ bound, are:
 
 \begin{proposition}[Proposition 4]
 \label{thm:fuel}
+\leavevmode\par\vspace{0.3em}
 \begin{lstlisting}
 theorem collatz_iterate_gt_initial (k q t : Nat) (hk : 1 ≤ k) (hq : 1 ≤ q)
     (ht1 : 1 ≤ t) (ht2 : t ≤ 2 * k) :
@@ -446,6 +453,7 @@ theorem n_alt_iterate_eight (k : Nat) (hk : 1 ≤ k) :
 
 \begin{theorem}[Theorem 1 of \texttt{AlternatingGlide.lean}]
 \label{thm:alt}
+\leavevmode\par\vspace{0.3em}
 \begin{lstlisting}
 theorem n_alt_glide_eq (k : Nat) (hk : 1 ≤ k) : GlideEq (n_alt k) 8
 
