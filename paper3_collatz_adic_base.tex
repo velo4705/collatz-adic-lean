@@ -1,0 +1,651 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage{fontspec}
+\setmonofont{JetBrainsMono Nerd Font Mono}[Scale=0.78]
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{geometry}
+\geometry{margin=2.5cm}
+\usepackage{booktabs}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{hyperref}
+
+\hypersetup{
+  colorlinks=true,
+  linkcolor=blue,
+  citecolor=blue,
+  urlcolor=blue,
+  pdftitle={CollatzAdicBase: Machine-Verified 3-Adic Rational Descent and 2-Adic Glide Bounds for the Collatz Map in Lean 4},
+  pdfauthor={Jovian Wilson Simon}
+}
+
+\lstdefinestyle{lean}{
+  basicstyle=\ttfamily\footnotesize,
+  columns=fullflexible,
+  keepspaces=true,
+  breaklines=true,
+  frame=single,
+  framesep=6pt,
+  xleftmargin=6pt,
+  xrightmargin=6pt,
+  backgroundcolor=\color{gray!6}
+}
+\lstset{style=lean}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{definition}[theorem]{Definition}
+
+\title{\textbf{CollatzAdicBase: Machine-Verified 3-Adic Rational Descent and 2-Adic Glide Bounds for the Collatz Map in Lean 4}}
+
+\author{Jovian Wilson Simon\\
+A J Institute of Engineering and Technology\\
+ORCID: 0009-0000-5022-8570}
+
+\date{November 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We report a complete machine-checked formalization, in Lean 4 with Mathlib
+(version 4.36.0), of the local $2$-adic and $3$-adic valuation dynamics that
+underlie two earlier preprints on the Collatz map.  On the $3$-adic side we
+formalize reduced rational states $(a,d)$, prove that the denominator gcd at an
+odd step divides $3$, establish stability of every prime $p\neq 3$, prove that
+an odd step removes exactly one factor of $3$ when $3\mid d$, and derive a
+descent theorem for pure powers of three together with a kernel-checked
+exhaustive verification for $1\le k\le 6$.  On the $2$-adic side we formalize
+the glide predicates and prove both the initial fuel law
+$G(2^{k}q-1)\ge 2k+1$ and the alternating-bit quantization
+$G\bigl((2^{2k+3}+1)/3\bigr)=8$ for all $k\ge 1$.  The formalization also
+uncovers an off-by-one error in Lemma 3 of the second preprint, which we correct
+and document.  A full \texttt{\#print axioms} audit of all five verified modules
+shows that every theorem depends only on the kernel's core axioms
+(\texttt{propext}, \texttt{Classical.choice}, \texttt{Quot.sound}); there is no
+\texttt{sorryAx} and no project-specific axiom.  The repository builds with zero
+errors and zero warnings.  This paper is the third in the series and is intended
+to accompany the source release \texttt{v1.0.0}.
+\end{abstract}
+
+\section{Introduction}
+\label{sec:intro}
+
+The Collatz map
+\[
+  T(n)=\begin{cases}
+    n/2, & n\equiv 0 \pmod 2,\\
+    3n+1, & n\equiv 1 \pmod 2,
+  \end{cases}
+\]
+and its extension to rationals with odd denominator occupy a peculiar position
+in arithmetic dynamics: the global conjecture remains open, yet many of the
+\emph{local} mechanisms that drive individual orbits are elementary and
+explicit.  The two preceding preprints in this series studied those mechanisms
+from complementary directions.  The first~\cite{paper1} analyzed periodic
+orbits of the $2$-adic rational Collatz map, proving $3$-adic exclusivity of
+nontrivial cycles and a descent theorem on pure $3$-power denominators.  The
+second~\cite{paper2} studied the integer map up to $10^{7}$, proving a rigid
+glide window for the alternating-bit family and a general $2$-adic ``fuel law''
+for odd integers with many trailing one-bits.
+
+The purpose of the present paper is to place the \emph{local} core of both
+preprints on an uncompromising foundation: a proof assistant kernel.  We do not
+claim a proof of the Collatz conjecture.  We claim something narrower but fully
+verified: every valuation-theoretic step used in~\cite{paper1,paper2} is a
+theorem of Lean 4, checked from the axioms of the kernel alone.
+
+Mechanization matters here for three reasons.  First, the arguments are replete
+with side conditions (positivity, coprimality, parity, subtraction truncation in
+$\mathbb{N}$) that are easy to suppress in informal prose but fatal to a proof;
+the kernel forces them into the open.  Second, the exhaustive $k\le 6$
+computation is a genuine finite verification, not a heuristic: it is performed
+by reduction of a decidable Boolean and accepted by the same kernel.  Third,
+as we describe in Section~\ref{sec:corrigendum}, the mechanization detected a
+concrete off-by-one error in the published statement of Lemma 3 of~\cite{paper2}.
+
+The paper is organized as follows.  Section~\ref{sec:arch} documents the
+formalization environment and the state representations.  Section~\ref{sec:descent}
+presents the $3$-adic rational descent.  Section~\ref{sec:glide} presents the
+$2$-adic fuel law and alternating glide bounds.  Section~\ref{sec:corrigendum}
+gives the verified corrigendum.  Section~\ref{sec:audit} reports the axiom audit
+and exact reproduction instructions.
+
+\section{Formalization architecture and environment}
+\label{sec:arch}
+
+\subsection{Toolchain and project structure}
+
+The development is a Lean 4 project pinned to toolchain and Mathlib version
+\texttt{v4.36.0}.  It comprises one root module \texttt{CollatzAdicBase} and five
+verified submodules, all exported together:
+
+\begin{center}
+\begin{tabular}{@{}ll@{}}
+\toprule
+Module & Content \\
+\midrule
+\texttt{Basic} & Collatz/shortcut operators, iterate lemmas, glide predicates \\
+\texttt{FuelLaw} & Proposition 4: initial $2$-adic fuel law \\
+\texttt{RationalDescent} & $3$-adic rational descent, Lemmas 2.1--2.4, Theorem 1, small-$k$ check \\
+\texttt{Refueling} & Mid-flight refueling congruence (Paper 2, Section 6) \\
+\texttt{AlternatingGlide} & Theorem 1, alternating-bit glide, Lemma 3 \\
+\texttt{LatentSaturation} & Denominator lifting and cycle saturation (Paper 4) \\
+\texttt{Axioms} & \texttt{\#print axioms} audit over all five verified modules \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\noindent The root file \texttt{CollatzAdicBase.lean} imports all seven modules,
+and \texttt{CollatzAdicBase/Axioms.lean} re-audits the five
+theorem-bearing ones.
+The library depends only on Lean's core library and Mathlib; it declares no
+custom axioms and uses no \texttt{sorry}.
+
+\subsection{State representations and operators}
+
+A reduced positive rational with odd denominator is encoded as a pair of
+naturals \texttt{(a,d)} with $a>0$, $d>0$, $d$ odd, and $\gcd(a,d)=1$.  In Lean:
+
+\begin{lstlisting}
+abbrev State := ℕ × ℕ
+
+def Valid (x : State) : Prop :=
+  0 < x.1 ∧ 0 < x.2 ∧ Odd x.2 ∧ Nat.Coprime x.1 x.2
+
+def step (x : State) : State :=
+  if _ : Even x.1 then (x.1 / 2, x.2)
+  else
+    let g := Nat.gcd (3 * x.1 + x.2) x.2
+    ((3 * x.1 + x.2) / g, x.2 / g)
+\end{lstlisting}
+
+\noindent Thus an even numerator triggers a halving that leaves the denominator
+unchanged; an odd numerator triggers the affine step $a\mapsto 3a+d$ followed by
+cancellation of the exact gcd $g=\gcd(3a+d,d)$.  Iteration is written with
+Mathlib's \texttt{Nat.iterate}: \texttt{orbit x n := step\textasciicircum[n] x}.  The integer
+operators are defined in \texttt{Basic.lean}:
+
+\begin{lstlisting}
+def collatz (n : Nat) : Nat := if n % 2 = 0 then n / 2 else 3 * n + 1
+
+def shortcut (m : Nat) : Nat := (3 * m + 1) / 2
+
+def GlideAtLeast (n m : Nat) : Prop :=
+  ∀ t, 1 ≤ t → t ≤ m → Nat.iterate collatz t n > n
+
+def GlideEq (n m : Nat) : Prop :=
+  (∀ t, 1 ≤ t → t < m → Nat.iterate collatz t n > n) ∧
+  Nat.iterate collatz m n < n
+\end{lstlisting}
+
+\noindent Here \texttt{shortcut} compresses one odd step and its forced even
+successor; \texttt{GlideAtLeast n m} says the orbit stays strictly above $n$
+through step $m$, and \texttt{GlideEq n m} says it stays strictly above through
+step $m-1$ and drops strictly below at step $m$.  In the notation of~\cite{paper2},
+$G(n)\ge m+1$ in the first case and $G(n)=m$ in the second.
+
+\subsection{Kernel-checked computation}
+
+Finite verification uses the reflexivity of equality on closed Boolean terms.
+A proposition $P$ is certified by producing a term of $P$ obtained from a
+\texttt{decide} proof of a Boolean reduction; the kernel then checks the
+reduction.  For the small-$k$ computation we use two layers: a Boolean sieve
+\texttt{verifyPureThreePowerSmallK} proved equal to \texttt{true} by
+\texttt{decide}, and a propositional corollary
+\texttt{verification\_all\_reduced\_small\_k} obtained by reflecting the sieve
+through \texttt{reachesOneBool\_iff}.  No external oracle or trusted computation
+is involved.
+
+\section{Mechanized 3-adic rational descent}
+\label{sec:descent}
+
+We present the Lean signatures verbatim, followed by proof outlines.  All
+statements in this section live in namespace \texttt{CollatzAdicBase} and come
+from \texttt{CollatzAdicBase/RationalDescent.lean}.
+
+\subsection{The gcd lemma}
+
+\begin{lemma}[gcd divides three]
+\label{thm:gcd3}
+\begin{lstlisting}
+lemma gcd_dvd_three {a d : ℕ} (hcop : Nat.Coprime a d) :
+    Nat.gcd (3 * a + d) d ∣ 3
+\end{lstlisting}
+\end{lemma}
+
+\begin{proof}[Proof outline]
+Put $g=\gcd(3a+d,d)$.  Then $g\mid d$ and $g\mid 3a+d$, hence by reduction modulo
+$g$ we get $g\mid 3a$.  Since $g\mid d$ and $\gcd(a,d)=1$, we have $\gcd(g,a)=1$.
+Euclid's lemma applied to $g\mid 3a$ then gives $g\mid 3$.
+\end{proof}
+
+Since $3$ is prime, \texttt{dvd\_three\_cases} converts $g\mid 3$ into
+$g=1\vee g=3$; this dichotomy drives the rest of the section.
+
+\subsection{Stability of primes other than three}
+
+\begin{lemma}[Lemma 2.1]
+\label{thm:stab}
+\begin{lstlisting}
+lemma lemma_2_1_stability (p : ℕ) (hp : p.Prime) (hp3 : p ≠ 3)
+    {a d : ℕ} (hcop : Nat.Coprime a d) :
+    padicValNat p (step (a, d)).2 = padicValNat p d
+\end{lstlisting}
+\end{lemma}
+
+\begin{proof}[Proof outline]
+Even steps leave $d$ untouched.  For odd steps, write $g=\gcd(3a+d,d)$ and use
+Lemma~\ref{thm:gcd3}: either $g=1$, which is trivial, or $g=3$, in which case
+$g$ has $p$-adic valuation $0$ because $p\neq 3$.  Rewriting
+$\operatorname{padicValNat}$ as a factorization and applying
+\texttt{Nat.factorization\_div} gives the claim.
+\end{proof}
+
+\subsection{One factor of three per odd step}
+
+\begin{lemma}[Lemma 2.2]
+\label{thm:one3}
+\begin{lstlisting}
+lemma lemma_2_2_one_three_per_odd_step {a d : ℕ} (_ha : Odd a) (_hdpos : 0 < d)
+    (hcop : Nat.Coprime a d) (h3d : 3 ∣ d) :
+    Nat.gcd (3 * a + d) d = 3 ∧
+      padicValNat 3 (d / 3) = padicValNat 3 d - 1
+\end{lstlisting}
+\end{lemma}
+
+\begin{proof}[Proof outline]
+With $g=\gcd(3a+d,d)$, Lemma~\ref{thm:gcd3} gives $g\mid 3$, while $3\mid d$
+and $3\mid 3a$ give $3\mid g$; hence $g=3$.  The valuation identity follows from
+\texttt{Nat.factorization\_div} and the fact that the factorization of $3$ at
+the prime $3$ equals $1$.
+\end{proof}
+
+\subsection{Forced halving after an odd step}
+
+\begin{lemma}[Lemma 2.3]
+\label{thm:halving}
+\begin{lstlisting}
+lemma lemma_2_3_forced_halving {a d : ℕ} (ha : Odd a) (hd : Odd d)
+    (hdpos : 0 < d) (_hcop : Nat.Coprime a d) :
+    Even ((3 * a + d) / Nat.gcd (3 * a + d) d)
+\end{lstlisting}
+\end{lemma}
+
+\begin{proof}[Proof outline]
+Let $g=\gcd(3a+d,d)$.  Because $d$ is odd, $g$ is odd.  The numerator $3a+d$ is
+even (odd $+$ odd), so $3a+d=2m$; since $g\mid 2m$ and $g$ is odd, $g\mid m$.
+Writing $m=gt$ gives $3a+d=g(2t)$, hence $(3a+d)/g=2t$ by
+\texttt{Nat.mul\_div\_right}.
+\end{proof}
+
+\subsection{Cycles are three-free}
+
+\begin{lemma}[Lemma 2.4 and Corollary 2.5]
+\label{thm:cycles}
+\begin{lstlisting}
+lemma lemma_2_4_and_cor_2_5_three_free_cycles {x : State} (hx : Valid x) {L : ℕ}
+    (hL : 1 ≤ L) (hcycle : orbit x L = x) :
+    ¬ 3 ∣ x.2 ∧ ∀ i, i ≤ L → (orbit x i).2 = x.2
+\end{lstlisting}
+\end{lemma}
+
+\begin{proof}[Proof outline]
+First, an all-even cycle is impossible: \texttt{orbit\_allEven\_decreases} shows
+that $L$ consecutive even steps strictly decrease the numerator, contradicting
+\texttt{orbit x L = x}.  Hence there is a first odd-numerator index $i_{0}$; by
+minimality the denominator is still $d$ at $i_{0}$.  If $3\mid d$, Lemma~\ref{thm:one3}
+forces a strict drop in $v_{3}$ at $i_{0}+1$, and $v_{3}$ never increases along an
+orbit (\texttt{v3\_orbit\_tail}); returning to $d$ at step $L$ is then impossible.
+So $3\nmid d$.  With the prime $3$ absent, Lemma~\ref{thm:gcd3} forces $g=1$ at
+every step, so the denominator is constant along the whole cycle.
+\end{proof}
+
+\subsection{Descent on pure powers of three}
+
+Let \texttt{oddCount x n} count odd-numerator steps in the first $n$ steps of
+the orbit of $x$.  The main theorem is:
+
+\begin{theorem}[Theorem 1]
+\label{thm:descent}
+\begin{lstlisting}
+theorem theorem_1_pure_three_power_descent (a k : ℕ) (ha : 0 < a)
+    (hcop : Nat.Coprime a (3 ^ k)) :
+    ∃ t m, step^[t] (a, 3 ^ k) = (m, 1) ∧ oddCount (a, 3 ^ k) t ≤ k
+\end{lstlisting}
+\end{theorem}
+
+\begin{proof}[Proof outline]
+Induction on $k$.  Factor $a=2^{s}b$ with $b$ odd (\texttt{even\_steps\_to\_odd});
+the first $s$ steps are halvings, so they leave the denominator $3^{k+1}$
+unchanged and contribute no odd steps.  The next step is odd; by
+Lemma~\ref{thm:one3} its gcd with $3^{k+1}$ is exactly $3$, so it sends
+$(b,3^{k+1})$ to $(b+3^{k},3^{k})$.  The induction hypothesis applied to the new
+numerator, whose coprimality with $3^{k}$ is inherited, supplies the remaining
+$t'$ steps and the count bound.  Additivity of \texttt{oddCount}
+(\texttt{oddCount\_add}) closes the arithmetic.
+\end{proof}
+
+\subsection{Exhaustive verification for \texorpdfstring{$1\le k\le 6$}{1 <= k <= 6}}
+
+The Boolean sieve and its reflected propositional form are:
+
+\begin{lstlisting}
+def reachesOneWithin (k a B : ℕ) : Prop :=
+  ∃ t ≤ B, step^[t] (a, 3 ^ k) = (1, 1)
+
+def reachesOneBool (k a B : ℕ) : Bool :=
+  (List.range (B + 1)).any (fun t => step^[t] (a, 3 ^ k) == (1, 1))
+
+def verifyPureThreePowerSmallK : Bool :=
+  (List.range 6).all fun ki =>
+    (List.range (3 ^ (ki + 1))).all fun ai =>
+      if Nat.Coprime ai (3 ^ (ki + 1)) then reachesOneBool (ki + 1) ai 100 else true
+
+set_option maxRecDepth 100000 in
+set_option maxHeartbeats 800000 in
+lemma verification_pure_three_power_k_le_six : verifyPureThreePowerSmallK = true := by
+  decide
+
+lemma verification_all_reduced_small_k :
+    ∀ k : Fin 6, ∀ a : Fin (3 ^ (k.val + 1)),
+      Nat.Coprime a.val (3 ^ (k.val + 1)) →
+      reachesOneWithin (k.val + 1) a.val 100
+\end{lstlisting}
+
+\noindent The search bound $B=100$ is deliberately conservative: direct
+evaluation of the same reduced dynamics over all reduced numerators
+$0<a<3^{k}$ for $1\le k\le 6$ shows that the true maximum number of reduced
+steps is \textbf{35}, attained at $k=6$, $a=520$.  Thus the kernel check certifies
+a bound with a comfortable margin, and the observed extremal trajectory fits
+well inside it.  The propositional form quantifies over all $\sum_{k=1}^{6}\phi(3^{k})$
+reduced states in the range, i.e.\ $2+6+18+54+162+486=728$ states.
+
+\section{Mechanized 2-adic fuel and alternating-bit bounds}
+\label{sec:glide}
+
+This section summarizes two modules.  The first,
+\texttt{CollatzAdicBase/FuelLaw.lean}, proves the fuel law; the second,
+\texttt{CollatzAdicBase/AlternatingGlide.lean}, proves the glide quantization.
+Both glide predicates were given in Section~\ref{sec:arch}.
+
+\subsection{The initial fuel law}
+
+The algebraic core is the exact evolution of the shortcut orbit:
+
+\begin{lstlisting}
+theorem iterate_shortcut_formula (k q j : Nat) (hk : 1 ≤ k) (hq : 1 ≤ q) (hj : j ≤ k) :
+    Nat.iterate shortcut j (2 ^ k * q - 1) = 3 ^ j * 2 ^ (k - j) * q - 1
+
+theorem collatz_iterate_even (k q j : Nat) (hk : 1 ≤ k) (hq : 1 ≤ q) (hj : j ≤ k) :
+    Nat.iterate collatz (2 * j) (2 ^ k * q - 1) = 3 ^ j * 2 ^ (k - j) * q - 1
+
+theorem collatz_iterate_two_mul (k q : Nat) (hk : 1 ≤ k) (hq : 1 ≤ q) :
+    Nat.iterate collatz (2 * k) (2 ^ k * q - 1) = 3 ^ k * q - 1
+\end{lstlisting}
+
+\noindent The strict ascent for all intermediate times, and the resulting glide
+bound, are:
+
+\begin{proposition}[Proposition 4]
+\label{thm:fuel}
+\begin{lstlisting}
+theorem collatz_iterate_gt_initial (k q t : Nat) (hk : 1 ≤ k) (hq : 1 ≤ q)
+    (ht1 : 1 ≤ t) (ht2 : t ≤ 2 * k) :
+    Nat.iterate collatz t (2 ^ k * q - 1) > 2 ^ k * q - 1
+
+theorem glide_at_least_two_mul (k q : Nat) (hk : 1 ≤ k) (hq : 1 ≤ q) :
+    GlideAtLeast (2 ^ k * q - 1) (2 * k)
+\end{lstlisting}
+\end{proposition}
+
+\begin{proof}[Proof outline]
+Two ordinary steps from an odd $m$ equal one shortcut step
+(\texttt{collatz\_twice\_odd}), so after $2j$ steps the value is the $j$-th
+shortcut value above.  For $1\le j\le k$ one has $2^{j}<3^{j}$ and
+$2^{k}q\le 3^{j}2^{k-j}q$, which yields strict inequality after subtracting $1$;
+the odd intermediate times are handled by one additional odd step.  The endpoint
+formula at $j=k$ gives $\texttt{collatz}^{2k}(2^{k}q-1)=3^{k}q-1$.
+\end{proof}
+
+Since the orbit exceeds its starting value for every $t$ with $1\le t\le 2k$,
+the first glide time satisfies $G(2^{k}q-1)\ge 2k+1$.  This is the formal
+counterpart of the $2$-adic fuel law of~\cite{paper2}.
+
+\subsection{Alternating-bit glide quantization}
+
+For $k\ge 1$ define the alternating-bit family
+\[
+  n_{\mathrm{alt}}(k)=\frac{2^{2k+3}+1}{3},
+\]
+whose binary expansion is $10\,10\cdots 10\,11$ with $k$ copies of $10$.  The
+definition is well-defined in $\mathbb{N}$ because $2^{2k+3}\equiv 2\pmod 3$:
+
+\begin{lstlisting}
+def n_alt (k : Nat) : Nat := (2 ^ (2 * k + 3) + 1) / 3
+
+theorem three_dvd_alt (k : Nat) : 3 ∣ 2 ^ (2 * k + 3) + 1
+
+theorem three_mul_n_alt (k : Nat) : 3 * n_alt k = 2 ^ (2 * k + 3) + 1
+\end{lstlisting}
+
+\noindent Writing $r=2^{2k-2}$, an eight-step table is proved step by step:
+
+\begin{lstlisting}
+theorem n_alt_iterate_two (k : Nat) (hk : 1 ≤ k) :
+    Nat.iterate collatz 2 (n_alt k) = 2 ^ (2 * k + 2) + 1
+
+theorem n_alt_iterate_five (k : Nat) (hk : 1 ≤ k) :
+    Nat.iterate collatz 5 (n_alt k) = 3 * 2 ^ (2 * k) + 1
+
+theorem n_alt_iterate_eight (k : Nat) (hk : 1 ≤ k) :
+    Nat.iterate collatz 8 (n_alt k) = 9 * 2 ^ (2 * k - 2) + 1
+\end{lstlisting}
+
+\begin{theorem}[Theorem 1 of \texttt{AlternatingGlide.lean}]
+\label{thm:alt}
+\begin{lstlisting}
+theorem n_alt_glide_eq (k : Nat) (hk : 1 ≤ k) : GlideEq (n_alt k) 8
+
+theorem alternating_bit_glide (k : Nat) (hk : 1 ≤ k) :
+    Nat.iterate collatz 2 (n_alt k) = 2 ^ (2 * k + 2) + 1 ∧
+    Nat.iterate collatz 5 (n_alt k) = 3 * 2 ^ (2 * k) + 1 ∧
+    Nat.iterate collatz 8 (n_alt k) = 9 * 2 ^ (2 * k - 2) + 1 ∧
+    (∀ t, 1 ≤ t → t ≤ 7 → Nat.iterate collatz t (n_alt k) > n_alt k) ∧
+    Nat.iterate collatz 8 (n_alt k) < n_alt k
+\end{lstlisting}
+\end{theorem}
+
+\begin{proof}[Proof outline]
+From $3n_{\mathrm{alt}}(k)=32r+1$ one obtains the closed forms of
+$T^{t}(n_{\mathrm{alt}}(k))$ for $t=1,\dots,8$ by eight explicit lemmas, each
+discharging a parity case with \texttt{omega}.  For $1\le t\le 7$ the value
+exceeds $9r+3$ while $3n_{\mathrm{alt}}(k)=32r+1$, so $T^{t}>n_{\mathrm{alt}}$;
+at $t=8$ the value is $9r+1<10r+\tfrac{1}{3}=n_{\mathrm{alt}}$.  This gives
+\texttt{GlideEq} and hence $G(n_{\mathrm{alt}}(k))=8$.
+\end{proof}
+
+\section{Verification-driven corrigendum: \texorpdfstring{$n_{0}=3$}{n0 = 3}}
+\label{sec:corrigendum}
+
+Lemma 3 of~\cite{paper2} concerns the exceptional case $k=0$, where
+$n_{\mathrm{alt}}(0)=3$.  The printed statement asserts
+$T^{6}(n_{0})=1<n_{0}$ and $T^{8}(n_{0})=4>n_{0}$.  The second equality is
+correct; the first is off by one.  Under the map actually formalized in
+\texttt{Basic.lean}, the orbit of $3$ is kernel-checked by
+\texttt{lemma\_three\_orbit} and displayed in full below.
+
+\begin{center}
+\begin{tabular}{@{}cccccccccc@{}}
+\toprule
+$t$ & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 \\
+\midrule
+$T^{t}(3)$ & 3 & 10 & 5 & 16 & 8 & 4 & \textbf{2} & \textbf{1} & \textbf{4} \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\noindent The corresponding verified statement is
+
+\begin{lstlisting}
+theorem lemma_three_orbit :
+    Nat.iterate collatz 6 3 = 2 ∧
+    Nat.iterate collatz 7 3 = 1 ∧
+    Nat.iterate collatz 8 3 = 4 := by
+  decide
+
+theorem lemma_three_k_zero :
+    n_alt 0 = 3 ∧
+    Nat.iterate collatz 7 3 = 1 ∧ Nat.iterate collatz 7 3 < 3 ∧
+    Nat.iterate collatz 8 3 = 4 ∧ Nat.iterate collatz 8 3 > 3
+\end{lstlisting}
+
+so that
+\[
+  T^{6}(3)=2,\qquad T^{7}(3)=1<3,\qquad T^{8}(3)=4>3 .
+\]
+The total stopping time of $3$ is therefore $7$ applications of $T$, not $6$.
+The qualitative claim of the printed lemma survives: the orbit has already
+dropped below its start by step $6$ ($T^{6}(3)=2<3$); only the index attached to
+the value $1$ was misstated.  Theorem~\ref{thm:alt} (valid for $k\ge 1$) and
+Proposition~\ref{thm:fuel} are unaffected: for $k\ge 1$ one has
+$n_{\mathrm{alt}}(k)\ge 11$ and $G(n_{\mathrm{alt}}(k))=8$, and the $k=0$ case is
+the isolated exception recorded by Lemma 3.  A corrigendum is archived with the
+source release as \texttt{CORRIGENDUM.md}; no revised version of~\cite{paper2}
+has been deposited on Zenodo at the time of writing, so that the corrected PDF
+and this paper can be cross-linked directly.
+
+\section{Axiom audit and reproducibility}
+\label{sec:audit}
+
+\subsection{The axiom audit}
+
+\texttt{CollatzAdicBase/Axioms.lean} issues \texttt{\#print axioms} for 29
+representative theorems across the five verified modules.  Running
+
+\begin{lstlisting}
+lake env lean CollatzAdicBase/Axioms.lean > AXIOM_AUDIT.txt 2>&1
+\end{lstlisting}
+
+\noindent produces the following verbatim table, also archived as
+\texttt{AXIOM\_AUDIT.txt}:
+
+\begin{lstlisting}
+'CollatzAdicBase.FuelLaw.iterate_shortcut_formula' depends on axioms: [propext, Quot.sound]
+'CollatzAdicBase.FuelLaw.iterate_shortcut_odd' depends on axioms: [propext, Quot.sound]
+'CollatzAdicBase.FuelLaw.iterate_shortcut_strict_mono' depends on axioms: [propext, Quot.sound]
+'CollatzAdicBase.FuelLaw.collatz_iterate_gt_initial' depends on axioms: [propext, Quot.sound]
+'CollatzAdicBase.FuelLaw.collatz_iterate_two_mul' depends on axioms: [propext, Quot.sound]
+'CollatzAdicBase.FuelLaw.glide_at_least_two_mul' depends on axioms: [propext, Quot.sound]
+'CollatzAdicBase.lemma_2_1_stability' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CollatzAdicBase.lemma_2_2_one_three_per_odd_step' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CollatzAdicBase.lemma_2_3_forced_halving' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CollatzAdicBase.lemma_2_4_and_cor_2_5_three_free_cycles' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CollatzAdicBase.theorem_1_pure_three_power_descent' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CollatzAdicBase.verification_pure_three_power_k_le_six' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CollatzAdicBase.verification_all_reduced_small_k' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CollatzAdicBase.Refueling.two_pow_dvd_iff_le_v2' depends on axioms: [propext, Quot.sound]
+'CollatzAdicBase.Refueling.refuel_landing' depends on axioms: [propext, Quot.sound]
+'CollatzAdicBase.Refueling.refuel_exhausts_fuel' depends on axioms: [propext, Quot.sound]
+'CollatzAdicBase.Refueling.refuel_congruence' depends on axioms: [propext, Quot.sound]
+'CollatzAdicBase.Refueling.refuel_mod_invariant' depends on axioms: [propext, Quot.sound]
+'CollatzAdicBase.AlternatingGlide.three_dvd_alt' depends on axioms: [propext, Quot.sound]
+'CollatzAdicBase.AlternatingGlide.n_alt_glide_eq' depends on axioms: [propext, Quot.sound]
+'CollatzAdicBase.AlternatingGlide.alternating_bit_glide' depends on axioms: [propext, Quot.sound]
+'CollatzAdicBase.AlternatingGlide.lemma_three_k_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CollatzAdicBase.LatentSaturation.gcd_lift' depends on axioms: [propext, Quot.sound]
+'CollatzAdicBase.LatentSaturation.ratStep_lift' depends on axioms: [propext, Quot.sound]
+'CollatzAdicBase.LatentSaturation.lift_congruence' depends on axioms: [propext]
+'CollatzAdicBase.LatentSaturation.cycle_dvd_pow_sub' depends on axioms: [propext, Quot.sound]
+'CollatzAdicBase.LatentSaturation.den_at_lifted_level' depends on axioms: [propext, Quot.sound]
+'CollatzAdicBase.LatentSaturation.three_free_preserved' depends on axioms: [propext, Quot.sound]
+'CollatzAdicBase.LatentSaturation.ratStep_valid' depends on axioms: [propext, Quot.sound]
+\end{lstlisting}
+
+\noindent Every entry is a subset of $\{\texttt{propext},\texttt{Classical.choice},
+\texttt{Quot.sound}\}$.  In particular \texttt{sorryAx} does not appear, and no
+axiom declared by the project appears: the development is conservative over
+Lean's kernel.  The presence of \texttt{Classical.choice} in the rational-descent
+theorems is routine, arising from classical reasoning about coprimality and the
+use of \texttt{Nat.find}; the $2$-adic modules avoid even that dependency.
+
+\subsection{Build instructions and release information}
+
+The complete verification is reproduced by the following commands from the
+repository root:
+
+\begin{lstlisting}
+# Toolchain (pinned in ./lean-toolchain): leanprover/lean4:v4.36.0
+lake build
+lake env lean CollatzAdicBase/Axioms.lean > AXIOM_AUDIT.txt 2>&1
+\end{lstlisting}
+
+\noindent Mathlib is pinned to \texttt{v4.36.0} in \texttt{lakefile.toml} and
+\texttt{lake-manifest.json}.  A full clean rebuild of the library reports
+\texttt{Build completed successfully (18266 jobs)} with zero errors and zero
+warnings.  The unified state described here is the commit carrying the
+annotated tag \texttt{v1.0.0}.
+
+\section{Conclusion}
+
+We have given a machine-checked account of the local valuation dynamics used in
+the first two preprints of this series.  The deliverables are (i) a verified
+$3$-adic descent framework in which cycles are proved $3$-free and pure
+$3$-power denominators reduce to integers, with a kernel-checked exhaustive
+check for $1\le k\le 6$; (ii) verified $2$-adic glide bounds, including the
+exact quantization $G(n_{\mathrm{alt}}(k))=8$ for all $k\ge 1$; and (iii) a
+corrected Lemma 3 for the exceptional input $n_{0}=3$, including the full
+$T$-orbit table.  The axiom audit certifies that nothing beyond Lean's core
+axioms is assumed.  The accompanying Lean repository, released as \texttt{v1.0.0},
+contains all sources, the corrigendum, and the archived audit.
+
+\paragraph{Data availability.}
+The two prior preprints are archived on Zenodo with DOIs
+\href{https://doi.org/10.5281/zenodo.24375499}{10.5281/zenodo.24375499}
+(Paper 1) and
+\href{https://doi.org/10.5281/zenodo.24397999}{10.5281/zenodo.24397999}
+(Paper 2).  The verified Lean sources and the artifact
+\texttt{AXIOM\_AUDIT.txt} accompany the present paper in the tagged release.
+
+\begin{thebibliography}{9}
+
+\bibitem{paper1} J.~W. Simon.
+\newblock Periodic cycles of the 2-adic rational Collatz map: 3-adic exclusivity
+  and descent on pure 3-power denominators.
+\newblock Zenodo preprint, 2026.
+\newblock \href{https://doi.org/10.5281/zenodo.24375499}{doi:10.5281/zenodo.24375499}.
+
+\bibitem{paper2} J.~W. Simon.
+\newblock Trailing Ones and High-Altitude Backbones: Empirical Trajectory
+  Dynamics and Algebraic Sub-Family Bounds in the Integer Collatz Map up to
+  $10^{7}$.
+\newblock Zenodo preprint, 2026.
+\newblock \href{https://doi.org/10.5281/zenodo.24397999}{doi:10.5281/zenodo.24397999}.
+
+\bibitem{terras} R.~Terras.
+\newblock A stopping time problem on the positive integers.
+\newblock \emph{Acta Arithmetica}, 30:241--252, 1976.
+
+\bibitem{lagarias} J.~C.~Lagarias, editor.
+\newblock \emph{The $3x+1$ Problem and Its Generalizations}.
+\newblock American Mathematical Society, 2010.
+
+\bibitem{tao} T.~Tao.
+\newblock Almost all orbits of the Collatz map attain almost bounded values.
+\newblock \emph{Forum of Mathematics, Pi}, 10:e12, 2022.
+
+\bibitem{mathlib} The mathlib community.
+\newblock The Lean mathematical library.
+\newblock In \emph{Proceedings of the 9th ACM SIGPLAN International Conference on
+  Certified Programs and Proofs (CPP 2020)}, pages 367--381, 2020.
+
+\bibitem{lean4} L.~de Moura and S.~Ullrich.
+\newblock The Lean 4 theorem prover and programming language.
+\newblock In \emph{Automated Deduction -- CADE 28}, LNCS 12699, pages 625--635,
+  Springer, 2021.
+
+\end{thebibliography}
+
+\end{document}
