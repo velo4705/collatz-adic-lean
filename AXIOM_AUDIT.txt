@@ -1,3 +1,10 @@
+CollatzAdicBase — complete #print axioms audit (seven Layer-2 modules)
+Verified: lake -K jobs=1 build completed with zero errors and zero warnings.
+Audited modules: RationalDescent, AlternatingGlide, FuelLaw, LatentSaturation,
+                Refueling, CycleExclusion, StoppingTimeDensity.
+Every theorem depends only on Lean core axioms: propext, Classical.choice, Quot.sound.
+Zero sorryAx and zero project-specific axioms.
+
 'CollatzAdicBase.FuelLaw.iterate_shortcut_formula' depends on axioms: [propext, Quot.sound]
 'CollatzAdicBase.FuelLaw.iterate_shortcut_odd' depends on axioms: [propext, Quot.sound]
 'CollatzAdicBase.FuelLaw.iterate_shortcut_strict_mono' depends on axioms: [propext, Quot.sound]
@@ -27,3 +34,23 @@
 'CollatzAdicBase.LatentSaturation.den_at_lifted_level' depends on axioms: [propext, Quot.sound]
 'CollatzAdicBase.LatentSaturation.three_free_preserved' depends on axioms: [propext, Quot.sound]
 'CollatzAdicBase.LatentSaturation.ratStep_valid' depends on axioms: [propext, Quot.sound]
+'CollatzAdicBase.CycleExclusion.step_three_free' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CollatzAdicBase.CycleExclusion.denom_const_of_three_free' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CollatzAdicBase.CycleExclusion.cycleAcc_spec' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CollatzAdicBase.CycleExclusion.cycle_sum_identity' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CollatzAdicBase.CycleExclusion.cycle_dvd' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CollatzAdicBase.CycleExclusion.one_odd_step_le_denominator' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CollatzAdicBase.CycleExclusion.no_integer_cycles_M_le_six' depends on axioms: [propext]
+'CollatzAdicBase.CycleExclusion.no_single_block_integer_cycles' depends on axioms: [propext]
+'CollatzAdicBase.CycleExclusion.cycT_patterns_odd_M_le_six' depends on axioms: [propext]
+'CollatzAdicBase.CycleExclusion.cycT_three_free' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CollatzAdicBase.StoppingTimeDensity.two_block_affine_plus' depends on axioms: [propext, Quot.sound]
+'CollatzAdicBase.StoppingTimeDensity.two_block_affine' depends on axioms: [propext, Quot.sound]
+'CollatzAdicBase.StoppingTimeDensity.two_block_composition' depends on axioms: [propext, Quot.sound]
+'CollatzAdicBase.StoppingTimeDensity.two_block_refuel_congruence' depends on axioms: [propext, Quot.sound]
+'CollatzAdicBase.StoppingTimeDensity.two_block_drift_threshold' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CollatzAdicBase.StoppingTimeDensity.drop_one_mod_four' depends on axioms: [propext, Quot.sound]
+'CollatzAdicBase.StoppingTimeDensity.drop_three_mod_sixteen' depends on axioms: [propext, Quot.sound]
+'CollatzAdicBase.StoppingTimeDensity.template_stop' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CollatzAdicBase.StoppingTimeDensity.cert8_stop' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CollatzAdicBase.StoppingTimeDensity.k8_partition' does not depend on any axioms

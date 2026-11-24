@@ -28,7 +28,11 @@ anywhere: the full axiom audit is recorded in
 - `CollatzAdicBase/AlternatingGlide.lean` — Theorem 1 and Lemma 3 (Paper 2).
 - `CollatzAdicBase/LatentSaturation.lean` — denominator lifting and cycle
   saturation lemmas (Paper 4).
-- `CollatzAdicBase/Axioms.lean` — `#print axioms` audit over all five modules,
+- `CollatzAdicBase/CycleExclusion.lean` — algebraic and modular cycle
+  exclusion, cycle-sum identity and kernel-checked small-cycle checks (Paper 6).
+- `CollatzAdicBase/StoppingTimeDensity.lean` — two-block drift identity and
+  stopping-time residue-class certificates (Paper 7).
+- `CollatzAdicBase/Axioms.lean` — `#print axioms` audit over all seven modules,
   run during `lake build`.
 
 ## Results

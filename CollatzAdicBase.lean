@@ -4,4 +4,6 @@ import CollatzAdicBase.RationalDescent
 import CollatzAdicBase.Refueling
 import CollatzAdicBase.AlternatingGlide
 import CollatzAdicBase.LatentSaturation
+import CollatzAdicBase.CycleExclusion
+import CollatzAdicBase.StoppingTimeDensity
 import CollatzAdicBase.Axioms

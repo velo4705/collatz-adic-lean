@@ -3,10 +3,12 @@ import CollatzAdicBase.RationalDescent
 import CollatzAdicBase.Refueling
 import CollatzAdicBase.AlternatingGlide
 import CollatzAdicBase.LatentSaturation
+import CollatzAdicBase.CycleExclusion
+import CollatzAdicBase.StoppingTimeDensity
 
 -- Axiom audit: every theorem below should depend only on Lean's core axioms
 -- (propext, Classical.choice, Quot.sound), with no sorryAx and no
--- project-specific axioms.  All five verified modules are audited here.
+-- project-specific axioms.  All seven verified modules are audited here.
 
 #print axioms CollatzAdicBase.FuelLaw.iterate_shortcut_formula
 #print axioms CollatzAdicBase.FuelLaw.iterate_shortcut_odd
@@ -41,3 +43,26 @@ import CollatzAdicBase.LatentSaturation
 #print axioms CollatzAdicBase.LatentSaturation.den_at_lifted_level
 #print axioms CollatzAdicBase.LatentSaturation.three_free_preserved
 #print axioms CollatzAdicBase.LatentSaturation.ratStep_valid
+
+-- Cycle exclusion module (Paper 6)
+#print axioms CollatzAdicBase.CycleExclusion.step_three_free
+#print axioms CollatzAdicBase.CycleExclusion.denom_const_of_three_free
+#print axioms CollatzAdicBase.CycleExclusion.cycleAcc_spec
+#print axioms CollatzAdicBase.CycleExclusion.cycle_sum_identity
+#print axioms CollatzAdicBase.CycleExclusion.cycle_dvd
+#print axioms CollatzAdicBase.CycleExclusion.one_odd_step_le_denominator
+#print axioms CollatzAdicBase.CycleExclusion.no_integer_cycles_M_le_six
+#print axioms CollatzAdicBase.CycleExclusion.no_single_block_integer_cycles
+#print axioms CollatzAdicBase.CycleExclusion.cycT_patterns_odd_M_le_six
+#print axioms CollatzAdicBase.CycleExclusion.cycT_three_free
+
+#print axioms CollatzAdicBase.StoppingTimeDensity.two_block_affine_plus
+#print axioms CollatzAdicBase.StoppingTimeDensity.two_block_affine
+#print axioms CollatzAdicBase.StoppingTimeDensity.two_block_composition
+#print axioms CollatzAdicBase.StoppingTimeDensity.two_block_refuel_congruence
+#print axioms CollatzAdicBase.StoppingTimeDensity.two_block_drift_threshold
+#print axioms CollatzAdicBase.StoppingTimeDensity.drop_one_mod_four
+#print axioms CollatzAdicBase.StoppingTimeDensity.drop_three_mod_sixteen
+#print axioms CollatzAdicBase.StoppingTimeDensity.template_stop
+#print axioms CollatzAdicBase.StoppingTimeDensity.cert8_stop
+#print axioms CollatzAdicBase.StoppingTimeDensity.k8_partition
