@@ -1,23 +1,20 @@
-CollatzAdicBase — complete #print axioms audit (ten verified modules)
-Regenerated from a fresh foreground `lake -K jobs=1 build` (18276 jobs, zero errors, zero warnings).
+CollatzAdicBase — complete #print axioms audit (nine verified modules)
+Verified: lake -K jobs=1 build completed with zero errors and zero warnings (18274 jobs).
 Audited modules: RationalDescent, AlternatingGlide, FuelLaw, LatentSaturation,
                 Refueling, CycleExclusion, StoppingTimeDensity, GlideMarkovChain,
-                SyracuseLogDrift, SyracuseRenewal.
-Every audited declaration depends only on Lean core axioms: propext, Classical.choice, Quot.sound.
-Zero sorryAx and zero project-specific axioms (all 76 audited declarations checked).
-Theorem count: 211 proven theorems/lemmas in total (208 across the ten audited modules
-and 3 in Basic.lean); 25 of them are in the new SyracuseRenewal module, which adds
-3 helper definitions, and 10 principal results from that module are audited below.
+                SyracuseLogDrift.
+Every theorem depends only on Lean core axioms: propext, Classical.choice, Quot.sound.
+Zero sorryAx and zero project-specific axioms.
+Theorem count: 186 proven theorems/lemmas in total (183 across the nine audited
+modules and 3 in Basic.lean); 19 of them are in the new SyracuseLogDrift module
+(2 theorems and 17 lemmas), of which 9 principal results are audited below.
 
--- FuelLaw module: 6 audited principal result(s)
 'CollatzAdicBase.FuelLaw.iterate_shortcut_formula' depends on axioms: [propext, Quot.sound]
 'CollatzAdicBase.FuelLaw.iterate_shortcut_odd' depends on axioms: [propext, Quot.sound]
 'CollatzAdicBase.FuelLaw.iterate_shortcut_strict_mono' depends on axioms: [propext, Quot.sound]
 'CollatzAdicBase.FuelLaw.collatz_iterate_gt_initial' depends on axioms: [propext, Quot.sound]
 'CollatzAdicBase.FuelLaw.collatz_iterate_two_mul' depends on axioms: [propext, Quot.sound]
 'CollatzAdicBase.FuelLaw.glide_at_least_two_mul' depends on axioms: [propext, Quot.sound]
-
--- RationalDescent module: 7 audited principal result(s)
 'CollatzAdicBase.lemma_2_1_stability' depends on axioms: [propext, Classical.choice, Quot.sound]
 'CollatzAdicBase.lemma_2_2_one_three_per_odd_step' depends on axioms: [propext, Classical.choice, Quot.sound]
 'CollatzAdicBase.lemma_2_3_forced_halving' depends on axioms: [propext, Classical.choice, Quot.sound]
@@ -25,21 +22,15 @@ and 3 in Basic.lean); 25 of them are in the new SyracuseRenewal module, which ad
 'CollatzAdicBase.theorem_1_pure_three_power_descent' depends on axioms: [propext, Classical.choice, Quot.sound]
 'CollatzAdicBase.verification_pure_three_power_k_le_six' depends on axioms: [propext, Classical.choice, Quot.sound]
 'CollatzAdicBase.verification_all_reduced_small_k' depends on axioms: [propext, Classical.choice, Quot.sound]
-
--- Refueling module: 5 audited principal result(s)
 'CollatzAdicBase.Refueling.two_pow_dvd_iff_le_v2' depends on axioms: [propext, Quot.sound]
 'CollatzAdicBase.Refueling.refuel_landing' depends on axioms: [propext, Quot.sound]
 'CollatzAdicBase.Refueling.refuel_exhausts_fuel' depends on axioms: [propext, Quot.sound]
 'CollatzAdicBase.Refueling.refuel_congruence' depends on axioms: [propext, Quot.sound]
 'CollatzAdicBase.Refueling.refuel_mod_invariant' depends on axioms: [propext, Quot.sound]
-
--- AlternatingGlide module: 4 audited principal result(s)
 'CollatzAdicBase.AlternatingGlide.three_dvd_alt' depends on axioms: [propext, Quot.sound]
 'CollatzAdicBase.AlternatingGlide.n_alt_glide_eq' depends on axioms: [propext, Quot.sound]
 'CollatzAdicBase.AlternatingGlide.alternating_bit_glide' depends on axioms: [propext, Quot.sound]
 'CollatzAdicBase.AlternatingGlide.lemma_three_k_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
-
--- LatentSaturation module: 7 audited principal result(s)
 'CollatzAdicBase.LatentSaturation.gcd_lift' depends on axioms: [propext, Quot.sound]
 'CollatzAdicBase.LatentSaturation.ratStep_lift' depends on axioms: [propext, Quot.sound]
 'CollatzAdicBase.LatentSaturation.lift_congruence' depends on axioms: [propext]
@@ -47,8 +38,6 @@ and 3 in Basic.lean); 25 of them are in the new SyracuseRenewal module, which ad
 'CollatzAdicBase.LatentSaturation.den_at_lifted_level' depends on axioms: [propext, Quot.sound]
 'CollatzAdicBase.LatentSaturation.three_free_preserved' depends on axioms: [propext, Quot.sound]
 'CollatzAdicBase.LatentSaturation.ratStep_valid' depends on axioms: [propext, Quot.sound]
-
--- CycleExclusion module: 10 audited principal result(s)
 'CollatzAdicBase.CycleExclusion.step_three_free' depends on axioms: [propext, Classical.choice, Quot.sound]
 'CollatzAdicBase.CycleExclusion.denom_const_of_three_free' depends on axioms: [propext, Classical.choice, Quot.sound]
 'CollatzAdicBase.CycleExclusion.cycleAcc_spec' depends on axioms: [propext, Classical.choice, Quot.sound]
@@ -59,8 +48,6 @@ and 3 in Basic.lean); 25 of them are in the new SyracuseRenewal module, which ad
 'CollatzAdicBase.CycleExclusion.no_single_block_integer_cycles' depends on axioms: [propext]
 'CollatzAdicBase.CycleExclusion.cycT_patterns_odd_M_le_six' depends on axioms: [propext]
 'CollatzAdicBase.CycleExclusion.cycT_three_free' depends on axioms: [propext, Classical.choice, Quot.sound]
-
--- StoppingTimeDensity module: 10 audited principal result(s)
 'CollatzAdicBase.StoppingTimeDensity.two_block_affine_plus' depends on axioms: [propext, Quot.sound]
 'CollatzAdicBase.StoppingTimeDensity.two_block_affine' depends on axioms: [propext, Quot.sound]
 'CollatzAdicBase.StoppingTimeDensity.two_block_composition' depends on axioms: [propext, Quot.sound]
@@ -71,8 +58,6 @@ and 3 in Basic.lean); 25 of them are in the new SyracuseRenewal module, which ad
 'CollatzAdicBase.StoppingTimeDensity.template_stop' depends on axioms: [propext, Classical.choice, Quot.sound]
 'CollatzAdicBase.StoppingTimeDensity.cert8_stop' depends on axioms: [propext, Classical.choice, Quot.sound]
 'CollatzAdicBase.StoppingTimeDensity.k8_partition' does not depend on any axioms
-
--- GlideMarkovChain module: 10 audited principal result(s)
 'CollatzAdicBase.GlideMarkovChain.glide_identity' depends on axioms: [propext, Quot.sound]
 'CollatzAdicBase.GlideMarkovChain.glideC_bound' depends on axioms: [propext, Quot.sound]
 'CollatzAdicBase.GlideMarkovChain.glide_drop' depends on axioms: [propext, Classical.choice, Quot.sound]
@@ -84,23 +69,14 @@ and 3 in Basic.lean); 25 of them are in the new SyracuseRenewal module, which ad
 'CollatzAdicBase.GlideMarkovChain.odd_survivor_decay' depends on axioms: [propext, Classical.choice, Quot.sound]
 'CollatzAdicBase.GlideMarkovChain.true_survivor_decay' depends on axioms: [propext, Classical.choice, Quot.sound]
 
--- SyracuseLogDrift module: 7 audited principal result(s)
+
+-- Syracuse log-drift module (Paper 9, v1.2.0): all 9 audited principal results
+'CollatzAdicBase.SyracuseLogDrift.v2_dvd' depends on axioms: [propext, Classical.choice, Quot.sound]
 'CollatzAdicBase.SyracuseLogDrift.syracuseStep_mul_pow_v2' depends on axioms: [propext, Classical.choice, Quot.sound]
 'CollatzAdicBase.SyracuseLogDrift.syracuseStep_odd' depends on axioms: [propext, Classical.choice, Quot.sound]
 'CollatzAdicBase.SyracuseLogDrift.syracuse_identity' depends on axioms: [propext, Classical.choice, Quot.sound]
 'CollatzAdicBase.SyracuseLogDrift.valWitness' depends on axioms: [propext, Classical.choice, Quot.sound]
 'CollatzAdicBase.SyracuseLogDrift.unique_val_residue' depends on axioms: [propext, Classical.choice, Quot.sound]
 'CollatzAdicBase.SyracuseLogDrift.exactValF_card' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CollatzAdicBase.SyracuseLogDrift.syracuseT_le_tildeTmax_of_pos' depends on axioms: [propext, Classical.choice, Quot.sound]
 'CollatzAdicBase.SyracuseLogDrift.cycle_min_upper_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
-
--- SyracuseRenewal module: 10 audited principal result(s)
-'CollatzAdicBase.SyracuseRenewal.glideVal_eq_div_pow_of_v2' depends on axioms: [propext, Classical.choice, Quot.sound]
-'CollatzAdicBase.SyracuseRenewal.glideW_v2_eq_one' depends on axioms: [propext, Classical.choice, Quot.sound]
-'CollatzAdicBase.SyracuseRenewal.glide_at_acc_times' depends on axioms: [propext, Classical.choice, Quot.sound]
-'CollatzAdicBase.SyracuseRenewal.glideW_sum_succ' depends on axioms: [propext, Classical.choice, Quot.sound]
-'CollatzAdicBase.SyracuseRenewal.syracuseFail_subset_survivor' depends on axioms: [propext, Classical.choice, Quot.sound]
-'CollatzAdicBase.SyracuseRenewal.syracuseFail_decay' depends on axioms: [propext, Classical.choice, Quot.sound]
-'CollatzAdicBase.SyracuseRenewal.syracuseFail_rational_decay' depends on axioms: [propext, Classical.choice, Quot.sound]
-'CollatzAdicBase.SyracuseRenewal.compCount_eq_choose' depends on axioms: [propext, Classical.choice, Quot.sound]
-'CollatzAdicBase.SyracuseRenewal.mgfPartial_closed' depends on axioms: [propext, Classical.choice, Quot.sound]
-'CollatzAdicBase.SyracuseRenewal.mgf_lambda_closed' depends on axioms: [propext, Classical.choice, Quot.sound]
