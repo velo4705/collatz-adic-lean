@@ -8,4 +8,6 @@ import CollatzAdicBase.CycleExclusion
 import CollatzAdicBase.StoppingTimeDensity
 import CollatzAdicBase.GlideMarkovChain
 import CollatzAdicBase.SyracuseLogDrift
+import CollatzAdicBase.SyracuseRenewal
+import CollatzAdicBase.ExcursionTail
 import CollatzAdicBase.Axioms

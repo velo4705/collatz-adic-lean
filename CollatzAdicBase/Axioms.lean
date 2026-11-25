@@ -7,10 +7,12 @@ import CollatzAdicBase.CycleExclusion
 import CollatzAdicBase.StoppingTimeDensity
 import CollatzAdicBase.GlideMarkovChain
 import CollatzAdicBase.SyracuseLogDrift
+import CollatzAdicBase.SyracuseRenewal
+import CollatzAdicBase.ExcursionTail
 
 -- Axiom audit: every theorem below should depend only on Lean's core axioms
 -- (propext, Classical.choice, Quot.sound), with no sorryAx and no
--- project-specific axioms.  All eight verified modules are audited here.
+-- project-specific axioms.  All eleven verified modules are audited here.
 
 #print axioms CollatzAdicBase.FuelLaw.iterate_shortcut_formula
 #print axioms CollatzAdicBase.FuelLaw.iterate_shortcut_odd
@@ -89,3 +91,22 @@ import CollatzAdicBase.SyracuseLogDrift
 #print axioms CollatzAdicBase.SyracuseLogDrift.unique_val_residue
 #print axioms CollatzAdicBase.SyracuseLogDrift.exactValF_card
 #print axioms CollatzAdicBase.SyracuseLogDrift.cycle_min_upper_bound
+
+-- Syracuse renewal module (Paper 10, v1.4.0)
+#print axioms CollatzAdicBase.SyracuseRenewal.glideVal_eq_div_pow_of_v2
+#print axioms CollatzAdicBase.SyracuseRenewal.glideW_v2_eq_one
+#print axioms CollatzAdicBase.SyracuseRenewal.glide_at_acc_times
+#print axioms CollatzAdicBase.SyracuseRenewal.glideW_sum_succ
+#print axioms CollatzAdicBase.SyracuseRenewal.syracuseFail_subset_survivor
+#print axioms CollatzAdicBase.SyracuseRenewal.syracuseFail_decay
+#print axioms CollatzAdicBase.SyracuseRenewal.syracuseFail_rational_decay
+#print axioms CollatzAdicBase.SyracuseRenewal.compCount_eq_choose
+#print axioms CollatzAdicBase.SyracuseRenewal.mgfPartial_closed
+#print axioms CollatzAdicBase.SyracuseRenewal.mgf_lambda_closed
+
+-- Excursion tail module (Paper 11, Layer 6)
+#print axioms CollatzAdicBase.ExcursionTail.syracuseOrbit_ratio_le
+#print axioms CollatzAdicBase.ExcursionTail.excursionFailF_orbit_ge
+#print axioms CollatzAdicBase.ExcursionTail.oneStep_inj
+#print axioms CollatzAdicBase.ExcursionTail.valList_eq_of_modEq
+#print axioms CollatzAdicBase.ExcursionTail.excursionFailF_tail_uniform

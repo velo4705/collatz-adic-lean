@@ -1,0 +1,4358 @@
+{
+  "layer": 6,
+  "title": "Uniform prefix-maximum upward excursion tail for Syracuse orbits",
+  "certified_constant": 26,
+  "optimal_constant_at_lambda_half": 17.971747191607797,
+  "tilt": {
+    "lambda": "1/2",
+    "x": "5/7",
+    "beta": "26/15",
+    "z": "5/14",
+    "m": "5/9",
+    "rho": "26/27"
+  },
+  "prefix_ratio_bound": {
+    "all_ok": true,
+    "rows": [
+      {
+        "n0": 1,
+        "checks": [
+          {
+            "j": 1,
+            "A": 2,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 1,
+            "A": 2,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 2,
+            "A": 4,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 1,
+            "A": 2,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 2,
+            "A": 4,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 3,
+            "A": 6,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 1,
+            "A": 2,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 2,
+            "A": 4,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 3,
+            "A": 6,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 4,
+            "A": 8,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 5,
+            "A": 10,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 1,
+            "A": 2,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 2,
+            "A": 4,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 3,
+            "A": 6,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 4,
+            "A": 8,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 5,
+            "A": 10,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 6,
+            "A": 12,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 7,
+            "A": 14,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 8,
+            "A": 16,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 1,
+            "A": 2,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 2,
+            "A": 4,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 3,
+            "A": 6,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 4,
+            "A": 8,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 5,
+            "A": 10,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 6,
+            "A": 12,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 7,
+            "A": 14,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 8,
+            "A": 16,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 9,
+            "A": 18,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 10,
+            "A": 20,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 11,
+            "A": 22,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 12,
+            "A": 24,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          }
+        ]
+      },
+      {
+        "n0": 3,
+        "checks": [
+          {
+            "j": 1,
+            "A": 1,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 1,
+            "A": 1,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 2,
+            "A": 5,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 1,
+            "A": 1,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 2,
+            "A": 5,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 3,
+            "A": 7,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 1,
+            "A": 1,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 2,
+            "A": 5,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 3,
+            "A": 7,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 4,
+            "A": 9,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 5,
+            "A": 11,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 1,
+            "A": 1,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 2,
+            "A": 5,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 3,
+            "A": 7,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 4,
+            "A": 9,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 5,
+            "A": 11,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 6,
+            "A": 13,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 7,
+            "A": 15,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 8,
+            "A": 17,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 1,
+            "A": 1,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 2,
+            "A": 5,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 3,
+            "A": 7,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 4,
+            "A": 9,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 5,
+            "A": 11,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 6,
+            "A": 13,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 7,
+            "A": 15,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 8,
+            "A": 17,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 9,
+            "A": 19,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 10,
+            "A": 21,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 11,
+            "A": 23,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 12,
+            "A": 25,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          }
+        ]
+      },
+      {
+        "n0": 5,
+        "checks": [
+          {
+            "j": 1,
+            "A": 4,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 1,
+            "A": 4,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 2,
+            "A": 6,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 1,
+            "A": 4,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 2,
+            "A": 6,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 3,
+            "A": 8,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 1,
+            "A": 4,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 2,
+            "A": 6,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 3,
+            "A": 8,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 4,
+            "A": 10,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 5,
+            "A": 12,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 1,
+            "A": 4,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 2,
+            "A": 6,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 3,
+            "A": 8,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 4,
+            "A": 10,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 5,
+            "A": 12,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 6,
+            "A": 14,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 7,
+            "A": 16,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 8,
+            "A": 18,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 1,
+            "A": 4,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 2,
+            "A": 6,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 3,
+            "A": 8,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 4,
+            "A": 10,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 5,
+            "A": 12,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 6,
+            "A": 14,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 7,
+            "A": 16,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 8,
+            "A": 18,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 9,
+            "A": 20,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 10,
+            "A": 22,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 11,
+            "A": 24,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 12,
+            "A": 26,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          }
+        ]
+      },
+      {
+        "n0": 7,
+        "checks": [
+          {
+            "j": 1,
+            "A": 1,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 1,
+            "A": 1,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 2,
+            "A": 2,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 1,
+            "A": 1,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 2,
+            "A": 2,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 3,
+            "A": 4,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 1,
+            "A": 1,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 2,
+            "A": 2,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 3,
+            "A": 4,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 4,
+            "A": 7,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 5,
+            "A": 11,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 1,
+            "A": 1,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 2,
+            "A": 2,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 3,
+            "A": 4,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 4,
+            "A": 7,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 5,
+            "A": 11,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 6,
+            "A": 13,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 7,
+            "A": 15,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 8,
+            "A": 17,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 1,
+            "A": 1,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 2,
+            "A": 2,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 3,
+            "A": 4,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 4,
+            "A": 7,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 5,
+            "A": 11,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 6,
+            "A": 13,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 7,
+            "A": 15,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 8,
+            "A": 17,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 9,
+            "A": 19,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 10,
+            "A": 21,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 11,
+            "A": 23,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 12,
+            "A": 25,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          }
+        ]
+      },
+      {
+        "n0": 11,
+        "checks": [
+          {
+            "j": 1,
+            "A": 1,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 1,
+            "A": 1,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 2,
+            "A": 3,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 1,
+            "A": 1,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 2,
+            "A": 3,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 3,
+            "A": 6,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 1,
+            "A": 1,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 2,
+            "A": 3,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 3,
+            "A": 6,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 4,
+            "A": 10,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 5,
+            "A": 12,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 1,
+            "A": 1,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 2,
+            "A": 3,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 3,
+            "A": 6,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 4,
+            "A": 10,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 5,
+            "A": 12,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 6,
+            "A": 14,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 7,
+            "A": 16,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 8,
+            "A": 18,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 1,
+            "A": 1,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 2,
+            "A": 3,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 3,
+            "A": 6,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 4,
+            "A": 10,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 5,
+            "A": 12,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 6,
+            "A": 14,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 7,
+            "A": 16,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 8,
+            "A": 18,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 9,
+            "A": 20,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 10,
+            "A": 22,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 11,
+            "A": 24,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 12,
+            "A": 26,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          }
+        ]
+      },
+      {
+        "n0": 27,
+        "checks": [
+          {
+            "j": 1,
+            "A": 1,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 1,
+            "A": 1,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 2,
+            "A": 3,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 1,
+            "A": 1,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 2,
+            "A": 3,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 3,
+            "A": 4,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 1,
+            "A": 1,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 2,
+            "A": 3,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 3,
+            "A": 4,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 4,
+            "A": 5,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 5,
+            "A": 6,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 1,
+            "A": 1,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 2,
+            "A": 3,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 3,
+            "A": 4,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 4,
+            "A": 5,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 5,
+            "A": 6,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 6,
+            "A": 7,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 7,
+            "A": 9,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 8,
+            "A": 11,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 1,
+            "A": 1,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 2,
+            "A": 3,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 3,
+            "A": 4,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 4,
+            "A": 5,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 5,
+            "A": 6,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 6,
+            "A": 7,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 7,
+            "A": 9,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 8,
+            "A": 11,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 9,
+            "A": 12,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 10,
+            "A": 14,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 11,
+            "A": 15,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 12,
+            "A": 16,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          }
+        ]
+      },
+      {
+        "n0": 97,
+        "checks": [
+          {
+            "j": 1,
+            "A": 2,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 1,
+            "A": 2,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 2,
+            "A": 4,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 1,
+            "A": 2,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 2,
+            "A": 4,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 3,
+            "A": 5,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 1,
+            "A": 2,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 2,
+            "A": 4,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 3,
+            "A": 5,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 4,
+            "A": 6,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 5,
+            "A": 9,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 1,
+            "A": 2,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 2,
+            "A": 4,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 3,
+            "A": 5,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 4,
+            "A": 6,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 5,
+            "A": 9,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 6,
+            "A": 10,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 7,
+            "A": 11,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 8,
+            "A": 12,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 1,
+            "A": 2,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 2,
+            "A": 4,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 3,
+            "A": 5,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 4,
+            "A": 6,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 5,
+            "A": 9,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 6,
+            "A": 10,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 7,
+            "A": 11,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 8,
+            "A": 12,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 9,
+            "A": 14,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 10,
+            "A": 16,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 11,
+            "A": 17,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 12,
+            "A": 19,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          }
+        ]
+      },
+      {
+        "n0": 703,
+        "checks": [
+          {
+            "j": 1,
+            "A": 1,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 1,
+            "A": 1,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 2,
+            "A": 2,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 1,
+            "A": 1,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 2,
+            "A": 2,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 3,
+            "A": 3,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 1,
+            "A": 1,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 2,
+            "A": 2,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 3,
+            "A": 3,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 4,
+            "A": 4,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 5,
+            "A": 5,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 1,
+            "A": 1,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 2,
+            "A": 2,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 3,
+            "A": 3,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 4,
+            "A": 4,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 5,
+            "A": 5,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 6,
+            "A": 7,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 7,
+            "A": 9,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 8,
+            "A": 10,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 1,
+            "A": 1,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 2,
+            "A": 2,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 3,
+            "A": 3,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 4,
+            "A": 4,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 5,
+            "A": 5,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 6,
+            "A": 7,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 7,
+            "A": 9,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 8,
+            "A": 10,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 9,
+            "A": 11,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 10,
+            "A": 12,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 11,
+            "A": 13,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 12,
+            "A": 14,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          }
+        ]
+      },
+      {
+        "n0": 871,
+        "checks": [
+          {
+            "j": 1,
+            "A": 1,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 1,
+            "A": 1,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 2,
+            "A": 2,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 1,
+            "A": 1,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 2,
+            "A": 2,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 3,
+            "A": 4,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 1,
+            "A": 1,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 2,
+            "A": 2,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 3,
+            "A": 4,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 4,
+            "A": 5,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 5,
+            "A": 6,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 1,
+            "A": 1,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 2,
+            "A": 2,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 3,
+            "A": 4,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 4,
+            "A": 5,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 5,
+            "A": 6,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 6,
+            "A": 7,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 7,
+            "A": 8,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 8,
+            "A": 9,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 1,
+            "A": 1,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 2,
+            "A": 2,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 3,
+            "A": 4,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 4,
+            "A": 5,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 5,
+            "A": 6,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 6,
+            "A": 7,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 7,
+            "A": 8,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 8,
+            "A": 9,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 9,
+            "A": 11,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 10,
+            "A": 12,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 11,
+            "A": 13,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 12,
+            "A": 14,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          }
+        ]
+      },
+      {
+        "n0": 6171,
+        "checks": [
+          {
+            "j": 1,
+            "A": 1,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 1,
+            "A": 1,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 2,
+            "A": 3,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 1,
+            "A": 1,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 2,
+            "A": 3,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 3,
+            "A": 4,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 1,
+            "A": 1,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 2,
+            "A": 3,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 3,
+            "A": 4,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 4,
+            "A": 5,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 5,
+            "A": 6,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 1,
+            "A": 1,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 2,
+            "A": 3,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 3,
+            "A": 4,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 4,
+            "A": 5,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 5,
+            "A": 6,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 6,
+            "A": 7,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 7,
+            "A": 9,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 8,
+            "A": 12,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 1,
+            "A": 1,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 2,
+            "A": 3,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 3,
+            "A": 4,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 4,
+            "A": 5,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 5,
+            "A": 6,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 6,
+            "A": 7,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 7,
+            "A": 9,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 8,
+            "A": 12,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 9,
+            "A": 13,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 10,
+            "A": 14,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 11,
+            "A": 15,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 12,
+            "A": 16,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          }
+        ]
+      },
+      {
+        "n0": 77031,
+        "checks": [
+          {
+            "j": 1,
+            "A": 1,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 1,
+            "A": 1,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 2,
+            "A": 2,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 1,
+            "A": 1,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 2,
+            "A": 2,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 3,
+            "A": 4,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 1,
+            "A": 1,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 2,
+            "A": 2,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 3,
+            "A": 4,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 4,
+            "A": 5,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 5,
+            "A": 6,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 1,
+            "A": 1,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 2,
+            "A": 2,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 3,
+            "A": 4,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 4,
+            "A": 5,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 5,
+            "A": 6,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 6,
+            "A": 8,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 7,
+            "A": 10,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 8,
+            "A": 12,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 1,
+            "A": 1,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 2,
+            "A": 2,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 3,
+            "A": 4,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 4,
+            "A": 5,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 5,
+            "A": 6,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 6,
+            "A": 8,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 7,
+            "A": 10,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 8,
+            "A": 12,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 9,
+            "A": 13,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 10,
+            "A": 14,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 11,
+            "A": 15,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 12,
+            "A": 16,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          }
+        ]
+      },
+      {
+        "n0": 837799,
+        "checks": [
+          {
+            "j": 1,
+            "A": 1,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 1,
+            "A": 1,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 2,
+            "A": 2,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 1,
+            "A": 1,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 2,
+            "A": 2,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 3,
+            "A": 4,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 1,
+            "A": 1,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 2,
+            "A": 2,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 3,
+            "A": 4,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 4,
+            "A": 5,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 5,
+            "A": 7,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 1,
+            "A": 1,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 2,
+            "A": 2,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 3,
+            "A": 4,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 4,
+            "A": 5,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 5,
+            "A": 7,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 6,
+            "A": 8,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 7,
+            "A": 9,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 8,
+            "A": 10,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 1,
+            "A": 1,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 2,
+            "A": 2,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 3,
+            "A": 4,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 4,
+            "A": 5,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 5,
+            "A": 7,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 6,
+            "A": 8,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 7,
+            "A": 9,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 8,
+            "A": 10,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 9,
+            "A": 12,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 10,
+            "A": 13,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 11,
+            "A": 14,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          },
+          {
+            "j": 12,
+            "A": 15,
+            "identity": true,
+            "drift": true,
+            "exact_ratio": true,
+            "ok": true
+          }
+        ]
+      }
+    ]
+  },
+  "tilt_certificates": {
+    "x_sq_ge_half": true,
+    "beta_sq_ge_three": true,
+    "z": "5/14",
+    "m": "5/9",
+    "rho": "26/27",
+    "rho_lt_one": true,
+    "C": "26",
+    "C_eq_26": true,
+    "all_ok": true
+  },
+  "composition_generating_function": {
+    "all_ok": true,
+    "rows": [
+      {
+        "j": 1,
+        "K": 1,
+        "lhs": 0.35714285714285715,
+        "rhs": 0.5555555555555556,
+        "ok": true
+      },
+      {
+        "j": 1,
+        "K": 2,
+        "lhs": 0.4846938775510204,
+        "rhs": 0.5555555555555556,
+        "ok": true
+      },
+      {
+        "j": 1,
+        "K": 4,
+        "lhs": 0.5465170762182424,
+        "rhs": 0.5555555555555556,
+        "ok": true
+      },
+      {
+        "j": 2,
+        "K": 2,
+        "lhs": 0.12755102040816327,
+        "rhs": 0.30864197530864196,
+        "ok": true
+      },
+      {
+        "j": 2,
+        "K": 4,
+        "lhs": 0.2674666805497709,
+        "rhs": 0.30864197530864196,
+        "ok": true
+      },
+      {
+        "j": 2,
+        "K": 8,
+        "lhs": 0.307383886034184,
+        "rhs": 0.30864197530864196,
+        "ok": true
+      },
+      {
+        "j": 3,
+        "K": 3,
+        "lhs": 0.045553935860058306,
+        "rhs": 0.17146776406035666,
+        "ok": true
+      },
+      {
+        "j": 3,
+        "K": 6,
+        "lhs": 0.14997604102032316,
+        "rhs": 0.17146776406035666,
+        "ok": true
+      },
+      {
+        "j": 3,
+        "K": 12,
+        "lhs": 0.17129317900728663,
+        "rhs": 0.17146776406035666,
+        "ok": true
+      },
+      {
+        "j": 4,
+        "K": 4,
+        "lhs": 0.016269262807163683,
+        "rhs": 0.09525986892242036,
+        "ok": true
+      },
+      {
+        "j": 4,
+        "K": 8,
+        "lhs": 0.08434936855907949,
+        "rhs": 0.09525986892242036,
+        "ok": true
+      },
+      {
+        "j": 4,
+        "K": 16,
+        "lhs": 0.09523527870343151,
+        "rhs": 0.09525986892242036,
+        "ok": true
+      },
+      {
+        "j": 5,
+        "K": 5,
+        "lhs": 0.005810451002558458,
+        "rhs": 0.05292214940134465,
+        "ok": true
+      },
+      {
+        "j": 5,
+        "K": 10,
+        "lhs": 0.047438454365197766,
+        "rhs": 0.05292214940134465,
+        "ok": true
+      },
+      {
+        "j": 5,
+        "K": 20,
+        "lhs": 0.052918640947065894,
+        "rhs": 0.05292214940134465,
+        "ok": true
+      },
+      {
+        "j": 6,
+        "K": 6,
+        "lhs": 0.0020751610723423065,
+        "rhs": 0.029401194111858136,
+        "ok": true
+      },
+      {
+        "j": 6,
+        "K": 12,
+        "lhs": 0.026656137412885854,
+        "rhs": 0.029401194111858136,
+        "ok": true
+      },
+      {
+        "j": 6,
+        "K": 24,
+        "lhs": 0.029400688456933166,
+        "rhs": 0.029401194111858136,
+        "ok": true
+      },
+      {
+        "j": 7,
+        "K": 7,
+        "lhs": 0.0007411289544079666,
+        "rhs": 0.016333996728810075,
+        "ok": true
+      },
+      {
+        "j": 7,
+        "K": 14,
+        "lhs": 0.014962029062122264,
+        "rhs": 0.016333996728810075,
+        "ok": true
+      },
+      {
+        "j": 7,
+        "K": 28,
+        "lhs": 0.016333923271815463,
+        "rhs": 0.016333996728810075,
+        "ok": true
+      },
+      {
+        "j": 8,
+        "K": 8,
+        "lhs": 0.0002646889122885595,
+        "rhs": 0.00907444262711671,
+        "ok": true
+      },
+      {
+        "j": 8,
+        "K": 16,
+        "lhs": 0.008389047722688663,
+        "rhs": 0.00907444262711671,
+        "ok": true
+      },
+      {
+        "j": 8,
+        "K": 32,
+        "lhs": 0.009074431888239911,
+        "rhs": 0.00907444262711671,
+        "ok": true
+      },
+      {
+        "j": 9,
+        "K": 9,
+        "lhs": 9.453175438877124e-05,
+        "rhs": 0.005041357015064838,
+        "ok": true
+      },
+      {
+        "j": 9,
+        "K": 18,
+        "lhs": 0.004698918591762111,
+        "rhs": 0.005041357015064838,
+        "ok": true
+      },
+      {
+        "j": 9,
+        "K": 36,
+        "lhs": 0.005041355437020109,
+        "rhs": 0.005041357015064838,
+        "ok": true
+      },
+      {
+        "j": 10,
+        "K": 10,
+        "lhs": 3.376134085313259e-05,
+        "rhs": 0.0028007538972582434,
+        "ok": true
+      },
+      {
+        "j": 10,
+        "K": 20,
+        "lhs": 0.0026295989039061226,
+        "rhs": 0.0028007538972582434,
+        "ok": true
+      },
+      {
+        "j": 10,
+        "K": 40,
+        "lhs": 0.0028007536643796013,
+        "rhs": 0.0028007538972582434,
+        "ok": true
+      },
+      {
+        "j": 11,
+        "K": 11,
+        "lhs": 1.2057621733261639e-05,
+        "rhs": 0.0015559743873656909,
+        "ok": true
+      },
+      {
+        "j": 11,
+        "K": 22,
+        "lhs": 0.001470384586185762,
+        "rhs": 0.0015559743873656909,
+        "ok": true
+      },
+      {
+        "j": 11,
+        "K": 44,
+        "lhs": 0.0015559743528755614,
+        "rhs": 0.0015559743873656909,
+        "ok": true
+      },
+      {
+        "j": 12,
+        "K": 12,
+        "lhs": 4.306293476164871e-06,
+        "rhs": 0.0008644302152031615,
+        "ok": true
+      },
+      {
+        "j": 12,
+        "K": 24,
+        "lhs": 0.0008216042535066995,
+        "rhs": 0.0008644302152031615,
+        "ok": true
+      },
+      {
+        "j": 12,
+        "K": 48,
+        "lhs": 0.0008644302100794556,
+        "rhs": 0.0008644302152031615,
+        "ok": true
+      }
+    ]
+  },
+  "modulus_scan_K_1_to_16": [
+    {
+      "K": 1,
+      "checks": [
+        {
+          "B": 2,
+          "fail": 0,
+          "survivors": 1,
+          "odd_residues": 1,
+          "fraction": 0.0,
+          "bound": 18.384776310850235,
+          "integer_lhs": 0,
+          "integer_rhs": 676,
+          "ok": true
+        },
+        {
+          "B": 4,
+          "fail": 0,
+          "survivors": 1,
+          "odd_residues": 1,
+          "fraction": 0.0,
+          "bound": 13.0,
+          "integer_lhs": 0,
+          "integer_rhs": 676,
+          "ok": true
+        },
+        {
+          "B": 8,
+          "fail": 0,
+          "survivors": 1,
+          "odd_residues": 1,
+          "fraction": 0.0,
+          "bound": 9.192388155425117,
+          "integer_lhs": 0,
+          "integer_rhs": 676,
+          "ok": true
+        },
+        {
+          "B": 16,
+          "fail": 0,
+          "survivors": 1,
+          "odd_residues": 1,
+          "fraction": 0.0,
+          "bound": 6.5,
+          "integer_lhs": 0,
+          "integer_rhs": 676,
+          "ok": true
+        },
+        {
+          "B": 32,
+          "fail": 0,
+          "survivors": 1,
+          "odd_residues": 1,
+          "fraction": 0.0,
+          "bound": 4.596194077712559,
+          "integer_lhs": 0,
+          "integer_rhs": 676,
+          "ok": true
+        }
+      ],
+      "max_ratio_seen": 0.0,
+      "all_ok": true
+    },
+    {
+      "K": 2,
+      "checks": [
+        {
+          "B": 2,
+          "fail": 0,
+          "survivors": 2,
+          "odd_residues": 2,
+          "fraction": 0.0,
+          "bound": 18.384776310850235,
+          "integer_lhs": 0,
+          "integer_rhs": 2704,
+          "ok": true
+        },
+        {
+          "B": 4,
+          "fail": 0,
+          "survivors": 2,
+          "odd_residues": 2,
+          "fraction": 0.0,
+          "bound": 13.0,
+          "integer_lhs": 0,
+          "integer_rhs": 2704,
+          "ok": true
+        },
+        {
+          "B": 8,
+          "fail": 0,
+          "survivors": 2,
+          "odd_residues": 2,
+          "fraction": 0.0,
+          "bound": 9.192388155425117,
+          "integer_lhs": 0,
+          "integer_rhs": 2704,
+          "ok": true
+        },
+        {
+          "B": 16,
+          "fail": 0,
+          "survivors": 2,
+          "odd_residues": 2,
+          "fraction": 0.0,
+          "bound": 6.5,
+          "integer_lhs": 0,
+          "integer_rhs": 2704,
+          "ok": true
+        },
+        {
+          "B": 32,
+          "fail": 0,
+          "survivors": 2,
+          "odd_residues": 2,
+          "fraction": 0.0,
+          "bound": 4.596194077712559,
+          "integer_lhs": 0,
+          "integer_rhs": 2704,
+          "ok": true
+        }
+      ],
+      "max_ratio_seen": 1.5,
+      "all_ok": true
+    },
+    {
+      "K": 3,
+      "checks": [
+        {
+          "B": 2,
+          "fail": 1,
+          "survivors": 3,
+          "odd_residues": 4,
+          "fraction": 0.25,
+          "bound": 18.384776310850235,
+          "integer_lhs": 2,
+          "integer_rhs": 10816,
+          "ok": true
+        },
+        {
+          "B": 4,
+          "fail": 0,
+          "survivors": 4,
+          "odd_residues": 4,
+          "fraction": 0.0,
+          "bound": 13.0,
+          "integer_lhs": 0,
+          "integer_rhs": 10816,
+          "ok": true
+        },
+        {
+          "B": 8,
+          "fail": 0,
+          "survivors": 4,
+          "odd_residues": 4,
+          "fraction": 0.0,
+          "bound": 9.192388155425117,
+          "integer_lhs": 0,
+          "integer_rhs": 10816,
+          "ok": true
+        },
+        {
+          "B": 16,
+          "fail": 0,
+          "survivors": 4,
+          "odd_residues": 4,
+          "fraction": 0.0,
+          "bound": 6.5,
+          "integer_lhs": 0,
+          "integer_rhs": 10816,
+          "ok": true
+        },
+        {
+          "B": 32,
+          "fail": 0,
+          "survivors": 4,
+          "odd_residues": 4,
+          "fraction": 0.0,
+          "bound": 4.596194077712559,
+          "integer_lhs": 0,
+          "integer_rhs": 10816,
+          "ok": true
+        }
+      ],
+      "max_ratio_seen": 2.25,
+      "all_ok": true
+    },
+    {
+      "K": 4,
+      "checks": [
+        {
+          "B": 2,
+          "fail": 2,
+          "survivors": 6,
+          "odd_residues": 8,
+          "fraction": 0.25,
+          "bound": 18.384776310850235,
+          "integer_lhs": 8,
+          "integer_rhs": 43264,
+          "ok": true
+        },
+        {
+          "B": 4,
+          "fail": 0,
+          "survivors": 8,
+          "odd_residues": 8,
+          "fraction": 0.0,
+          "bound": 13.0,
+          "integer_lhs": 0,
+          "integer_rhs": 43264,
+          "ok": true
+        },
+        {
+          "B": 8,
+          "fail": 0,
+          "survivors": 8,
+          "odd_residues": 8,
+          "fraction": 0.0,
+          "bound": 9.192388155425117,
+          "integer_lhs": 0,
+          "integer_rhs": 43264,
+          "ok": true
+        },
+        {
+          "B": 16,
+          "fail": 0,
+          "survivors": 8,
+          "odd_residues": 8,
+          "fraction": 0.0,
+          "bound": 6.5,
+          "integer_lhs": 0,
+          "integer_rhs": 43264,
+          "ok": true
+        },
+        {
+          "B": 32,
+          "fail": 0,
+          "survivors": 8,
+          "odd_residues": 8,
+          "fraction": 0.0,
+          "bound": 4.596194077712559,
+          "integer_lhs": 0,
+          "integer_rhs": 43264,
+          "ok": true
+        }
+      ],
+      "max_ratio_seen": 3.375,
+      "all_ok": true
+    },
+    {
+      "K": 5,
+      "checks": [
+        {
+          "B": 2,
+          "fail": 4,
+          "survivors": 12,
+          "odd_residues": 16,
+          "fraction": 0.25,
+          "bound": 18.384776310850235,
+          "integer_lhs": 32,
+          "integer_rhs": 173056,
+          "ok": true
+        },
+        {
+          "B": 4,
+          "fail": 1,
+          "survivors": 15,
+          "odd_residues": 16,
+          "fraction": 0.0625,
+          "bound": 13.0,
+          "integer_lhs": 4,
+          "integer_rhs": 173056,
+          "ok": true
+        },
+        {
+          "B": 8,
+          "fail": 0,
+          "survivors": 16,
+          "odd_residues": 16,
+          "fraction": 0.0,
+          "bound": 9.192388155425117,
+          "integer_lhs": 0,
+          "integer_rhs": 173056,
+          "ok": true
+        },
+        {
+          "B": 16,
+          "fail": 0,
+          "survivors": 16,
+          "odd_residues": 16,
+          "fraction": 0.0,
+          "bound": 6.5,
+          "integer_lhs": 0,
+          "integer_rhs": 173056,
+          "ok": true
+        },
+        {
+          "B": 32,
+          "fail": 0,
+          "survivors": 16,
+          "odd_residues": 16,
+          "fraction": 0.0,
+          "bound": 4.596194077712559,
+          "integer_lhs": 0,
+          "integer_rhs": 173056,
+          "ok": true
+        }
+      ],
+      "max_ratio_seen": 5.0625,
+      "all_ok": true
+    },
+    {
+      "K": 6,
+      "checks": [
+        {
+          "B": 2,
+          "fail": 10,
+          "survivors": 22,
+          "odd_residues": 32,
+          "fraction": 0.3125,
+          "bound": 18.384776310850235,
+          "integer_lhs": 200,
+          "integer_rhs": 692224,
+          "ok": true
+        },
+        {
+          "B": 4,
+          "fail": 2,
+          "survivors": 30,
+          "odd_residues": 32,
+          "fraction": 0.0625,
+          "bound": 13.0,
+          "integer_lhs": 16,
+          "integer_rhs": 692224,
+          "ok": true
+        },
+        {
+          "B": 8,
+          "fail": 0,
+          "survivors": 32,
+          "odd_residues": 32,
+          "fraction": 0.0,
+          "bound": 9.192388155425117,
+          "integer_lhs": 0,
+          "integer_rhs": 692224,
+          "ok": true
+        },
+        {
+          "B": 16,
+          "fail": 0,
+          "survivors": 32,
+          "odd_residues": 32,
+          "fraction": 0.0,
+          "bound": 6.5,
+          "integer_lhs": 0,
+          "integer_rhs": 692224,
+          "ok": true
+        },
+        {
+          "B": 32,
+          "fail": 0,
+          "survivors": 32,
+          "odd_residues": 32,
+          "fraction": 0.0,
+          "bound": 4.596194077712559,
+          "integer_lhs": 0,
+          "integer_rhs": 692224,
+          "ok": true
+        }
+      ],
+      "max_ratio_seen": 7.59375,
+      "all_ok": true
+    },
+    {
+      "K": 7,
+      "checks": [
+        {
+          "B": 2,
+          "fail": 20,
+          "survivors": 44,
+          "odd_residues": 64,
+          "fraction": 0.3125,
+          "bound": 18.384776310850235,
+          "integer_lhs": 800,
+          "integer_rhs": 2768896,
+          "ok": true
+        },
+        {
+          "B": 4,
+          "fail": 4,
+          "survivors": 60,
+          "odd_residues": 64,
+          "fraction": 0.0625,
+          "bound": 13.0,
+          "integer_lhs": 64,
+          "integer_rhs": 2768896,
+          "ok": true
+        },
+        {
+          "B": 8,
+          "fail": 1,
+          "survivors": 63,
+          "odd_residues": 64,
+          "fraction": 0.015625,
+          "bound": 9.192388155425117,
+          "integer_lhs": 8,
+          "integer_rhs": 2768896,
+          "ok": true
+        },
+        {
+          "B": 16,
+          "fail": 0,
+          "survivors": 64,
+          "odd_residues": 64,
+          "fraction": 0.0,
+          "bound": 6.5,
+          "integer_lhs": 0,
+          "integer_rhs": 2768896,
+          "ok": true
+        },
+        {
+          "B": 32,
+          "fail": 0,
+          "survivors": 64,
+          "odd_residues": 64,
+          "fraction": 0.0,
+          "bound": 4.596194077712559,
+          "integer_lhs": 0,
+          "integer_rhs": 2768896,
+          "ok": true
+        }
+      ],
+      "max_ratio_seen": 11.390625,
+      "all_ok": true
+    },
+    {
+      "K": 8,
+      "checks": [
+        {
+          "B": 2,
+          "fail": 40,
+          "survivors": 88,
+          "odd_residues": 128,
+          "fraction": 0.3125,
+          "bound": 18.384776310850235,
+          "integer_lhs": 3200,
+          "integer_rhs": 11075584,
+          "ok": true
+        },
+        {
+          "B": 4,
+          "fail": 12,
+          "survivors": 116,
+          "odd_residues": 128,
+          "fraction": 0.09375,
+          "bound": 13.0,
+          "integer_lhs": 576,
+          "integer_rhs": 11075584,
+          "ok": true
+        },
+        {
+          "B": 8,
+          "fail": 2,
+          "survivors": 126,
+          "odd_residues": 128,
+          "fraction": 0.015625,
+          "bound": 9.192388155425117,
+          "integer_lhs": 32,
+          "integer_rhs": 11075584,
+          "ok": true
+        },
+        {
+          "B": 16,
+          "fail": 1,
+          "survivors": 127,
+          "odd_residues": 128,
+          "fraction": 0.0078125,
+          "bound": 6.5,
+          "integer_lhs": 16,
+          "integer_rhs": 11075584,
+          "ok": true
+        },
+        {
+          "B": 32,
+          "fail": 0,
+          "survivors": 128,
+          "odd_residues": 128,
+          "fraction": 0.0,
+          "bound": 4.596194077712559,
+          "integer_lhs": 0,
+          "integer_rhs": 11075584,
+          "ok": true
+        }
+      ],
+      "max_ratio_seen": 17.0859375,
+      "all_ok": true
+    },
+    {
+      "K": 9,
+      "checks": [
+        {
+          "B": 2,
+          "fail": 87,
+          "survivors": 169,
+          "odd_residues": 256,
+          "fraction": 0.33984375,
+          "bound": 18.384776310850235,
+          "integer_lhs": 15138,
+          "integer_rhs": 44302336,
+          "ok": true
+        },
+        {
+          "B": 4,
+          "fail": 24,
+          "survivors": 232,
+          "odd_residues": 256,
+          "fraction": 0.09375,
+          "bound": 13.0,
+          "integer_lhs": 2304,
+          "integer_rhs": 44302336,
+          "ok": true
+        },
+        {
+          "B": 8,
+          "fail": 10,
+          "survivors": 246,
+          "odd_residues": 256,
+          "fraction": 0.0390625,
+          "bound": 9.192388155425117,
+          "integer_lhs": 800,
+          "integer_rhs": 44302336,
+          "ok": true
+        },
+        {
+          "B": 16,
+          "fail": 2,
+          "survivors": 254,
+          "odd_residues": 256,
+          "fraction": 0.0078125,
+          "bound": 6.5,
+          "integer_lhs": 64,
+          "integer_rhs": 44302336,
+          "ok": true
+        },
+        {
+          "B": 32,
+          "fail": 0,
+          "survivors": 256,
+          "odd_residues": 256,
+          "fraction": 0.0,
+          "bound": 4.596194077712559,
+          "integer_lhs": 0,
+          "integer_rhs": 44302336,
+          "ok": true
+        }
+      ],
+      "max_ratio_seen": 25.62890625,
+      "all_ok": true
+    },
+    {
+      "K": 10,
+      "checks": [
+        {
+          "B": 2,
+          "fail": 174,
+          "survivors": 338,
+          "odd_residues": 512,
+          "fraction": 0.33984375,
+          "bound": 18.384776310850235,
+          "integer_lhs": 60552,
+          "integer_rhs": 177209344,
+          "ok": true
+        },
+        {
+          "B": 4,
+          "fail": 66,
+          "survivors": 446,
+          "odd_residues": 512,
+          "fraction": 0.12890625,
+          "bound": 13.0,
+          "integer_lhs": 17424,
+          "integer_rhs": 177209344,
+          "ok": true
+        },
+        {
+          "B": 8,
+          "fail": 20,
+          "survivors": 492,
+          "odd_residues": 512,
+          "fraction": 0.0390625,
+          "bound": 9.192388155425117,
+          "integer_lhs": 3200,
+          "integer_rhs": 177209344,
+          "ok": true
+        },
+        {
+          "B": 16,
+          "fail": 4,
+          "survivors": 508,
+          "odd_residues": 512,
+          "fraction": 0.0078125,
+          "bound": 6.5,
+          "integer_lhs": 256,
+          "integer_rhs": 177209344,
+          "ok": true
+        },
+        {
+          "B": 32,
+          "fail": 1,
+          "survivors": 511,
+          "odd_residues": 512,
+          "fraction": 0.001953125,
+          "bound": 4.596194077712559,
+          "integer_lhs": 32,
+          "integer_rhs": 177209344,
+          "ok": true
+        }
+      ],
+      "max_ratio_seen": 38.443359375,
+      "all_ok": true
+    },
+    {
+      "K": 11,
+      "checks": [
+        {
+          "B": 2,
+          "fail": 378,
+          "survivors": 646,
+          "odd_residues": 1024,
+          "fraction": 0.369140625,
+          "bound": 18.384776310850235,
+          "integer_lhs": 285768,
+          "integer_rhs": 708837376,
+          "ok": true
+        },
+        {
+          "B": 4,
+          "fail": 132,
+          "survivors": 892,
+          "odd_residues": 1024,
+          "fraction": 0.12890625,
+          "bound": 13.0,
+          "integer_lhs": 69696,
+          "integer_rhs": 708837376,
+          "ok": true
+        },
+        {
+          "B": 8,
+          "fail": 40,
+          "survivors": 984,
+          "odd_residues": 1024,
+          "fraction": 0.0390625,
+          "bound": 9.192388155425117,
+          "integer_lhs": 12800,
+          "integer_rhs": 708837376,
+          "ok": true
+        },
+        {
+          "B": 16,
+          "fail": 15,
+          "survivors": 1009,
+          "odd_residues": 1024,
+          "fraction": 0.0146484375,
+          "bound": 6.5,
+          "integer_lhs": 3600,
+          "integer_rhs": 708837376,
+          "ok": true
+        },
+        {
+          "B": 32,
+          "fail": 2,
+          "survivors": 1022,
+          "odd_residues": 1024,
+          "fraction": 0.001953125,
+          "bound": 4.596194077712559,
+          "integer_lhs": 128,
+          "integer_rhs": 708837376,
+          "ok": true
+        }
+      ],
+      "max_ratio_seen": 57.6650390625,
+      "all_ok": true
+    },
+    {
+      "K": 12,
+      "checks": [
+        {
+          "B": 2,
+          "fail": 756,
+          "survivors": 1292,
+          "odd_residues": 2048,
+          "fraction": 0.369140625,
+          "bound": 18.384776310850235,
+          "integer_lhs": 1143072,
+          "integer_rhs": 2835349504,
+          "ok": true
+        },
+        {
+          "B": 4,
+          "fail": 264,
+          "survivors": 1784,
+          "odd_residues": 2048,
+          "fraction": 0.12890625,
+          "bound": 13.0,
+          "integer_lhs": 278784,
+          "integer_rhs": 2835349504,
+          "ok": true
+        },
+        {
+          "B": 8,
+          "fail": 107,
+          "survivors": 1941,
+          "odd_residues": 2048,
+          "fraction": 0.05224609375,
+          "bound": 9.192388155425117,
+          "integer_lhs": 91592,
+          "integer_rhs": 2835349504,
+          "ok": true
+        },
+        {
+          "B": 16,
+          "fail": 30,
+          "survivors": 2018,
+          "odd_residues": 2048,
+          "fraction": 0.0146484375,
+          "bound": 6.5,
+          "integer_lhs": 14400,
+          "integer_rhs": 2835349504,
+          "ok": true
+        },
+        {
+          "B": 32,
+          "fail": 4,
+          "survivors": 2044,
+          "odd_residues": 2048,
+          "fraction": 0.001953125,
+          "bound": 4.596194077712559,
+          "integer_lhs": 512,
+          "integer_rhs": 2835349504,
+          "ok": true
+        }
+      ],
+      "max_ratio_seen": 86.49755859375,
+      "all_ok": true
+    },
+    {
+      "K": 13,
+      "checks": [
+        {
+          "B": 2,
+          "fail": 1512,
+          "survivors": 2584,
+          "odd_residues": 4096,
+          "fraction": 0.369140625,
+          "bound": 18.384776310850235,
+          "integer_lhs": 4572288,
+          "integer_rhs": 11341398016,
+          "ok": true
+        },
+        {
+          "B": 4,
+          "fail": 598,
+          "survivors": 3498,
+          "odd_residues": 4096,
+          "fraction": 0.14599609375,
+          "bound": 13.0,
+          "integer_lhs": 1430416,
+          "integer_rhs": 11341398016,
+          "ok": true
+        },
+        {
+          "B": 8,
+          "fail": 214,
+          "survivors": 3882,
+          "odd_residues": 4096,
+          "fraction": 0.05224609375,
+          "bound": 9.192388155425117,
+          "integer_lhs": 366368,
+          "integer_rhs": 11341398016,
+          "ok": true
+        },
+        {
+          "B": 16,
+          "fail": 60,
+          "survivors": 4036,
+          "odd_residues": 4096,
+          "fraction": 0.0146484375,
+          "bound": 6.5,
+          "integer_lhs": 57600,
+          "integer_rhs": 11341398016,
+          "ok": true
+        },
+        {
+          "B": 32,
+          "fail": 17,
+          "survivors": 4079,
+          "odd_residues": 4096,
+          "fraction": 0.004150390625,
+          "bound": 4.596194077712559,
+          "integer_lhs": 9248,
+          "integer_rhs": 11341398016,
+          "ok": true
+        }
+      ],
+      "max_ratio_seen": 129.746337890625,
+      "all_ok": true
+    },
+    {
+      "K": 14,
+      "checks": [
+        {
+          "B": 2,
+          "fail": 3137,
+          "survivors": 5055,
+          "odd_residues": 8192,
+          "fraction": 0.3829345703125,
+          "bound": 18.384776310850235,
+          "integer_lhs": 19681538,
+          "integer_rhs": 45365592064,
+          "ok": true
+        },
+        {
+          "B": 4,
+          "fail": 1196,
+          "survivors": 6996,
+          "odd_residues": 8192,
+          "fraction": 0.14599609375,
+          "bound": 13.0,
+          "integer_lhs": 5721664,
+          "integer_rhs": 45365592064,
+          "ok": true
+        },
+        {
+          "B": 8,
+          "fail": 428,
+          "survivors": 7764,
+          "odd_residues": 8192,
+          "fraction": 0.05224609375,
+          "bound": 9.192388155425117,
+          "integer_lhs": 1465472,
+          "integer_rhs": 45365592064,
+          "ok": true
+        },
+        {
+          "B": 16,
+          "fail": 162,
+          "survivors": 8030,
+          "odd_residues": 8192,
+          "fraction": 0.019775390625,
+          "bound": 6.5,
+          "integer_lhs": 419904,
+          "integer_rhs": 45365592064,
+          "ok": true
+        },
+        {
+          "B": 32,
+          "fail": 34,
+          "survivors": 8158,
+          "odd_residues": 8192,
+          "fraction": 0.004150390625,
+          "bound": 4.596194077712559,
+          "integer_lhs": 36992,
+          "integer_rhs": 45365592064,
+          "ok": true
+        }
+      ],
+      "max_ratio_seen": 194.6195068359375,
+      "all_ok": true
+    },
+    {
+      "K": 15,
+      "checks": [
+        {
+          "B": 2,
+          "fail": 6274,
+          "survivors": 10110,
+          "odd_residues": 16384,
+          "fraction": 0.3829345703125,
+          "bound": 18.384776310850235,
+          "integer_lhs": 78726152,
+          "integer_rhs": 181462368256,
+          "ok": true
+        },
+        {
+          "B": 4,
+          "fail": 2392,
+          "survivors": 13992,
+          "odd_residues": 16384,
+          "fraction": 0.14599609375,
+          "bound": 13.0,
+          "integer_lhs": 22886656,
+          "integer_rhs": 181462368256,
+          "ok": true
+        },
+        {
+          "B": 8,
+          "fail": 993,
+          "survivors": 15391,
+          "odd_residues": 16384,
+          "fraction": 0.06060791015625,
+          "bound": 9.192388155425117,
+          "integer_lhs": 7888392,
+          "integer_rhs": 181462368256,
+          "ok": true
+        },
+        {
+          "B": 16,
+          "fail": 324,
+          "survivors": 16060,
+          "odd_residues": 16384,
+          "fraction": 0.019775390625,
+          "bound": 6.5,
+          "integer_lhs": 1679616,
+          "integer_rhs": 181462368256,
+          "ok": true
+        },
+        {
+          "B": 32,
+          "fail": 131,
+          "survivors": 16253,
+          "odd_residues": 16384,
+          "fraction": 0.00799560546875,
+          "bound": 4.596194077712559,
+          "integer_lhs": 549152,
+          "integer_rhs": 181462368256,
+          "ok": true
+        }
+      ],
+      "max_ratio_seen": 291.92926025390625,
+      "all_ok": true
+    },
+    {
+      "K": 16,
+      "checks": [
+        {
+          "B": 2,
+          "fail": 12548,
+          "survivors": 20220,
+          "odd_residues": 32768,
+          "fraction": 0.3829345703125,
+          "bound": 18.384776310850235,
+          "integer_lhs": 314904608,
+          "integer_rhs": 725849473024,
+          "ok": true
+        },
+        {
+          "B": 4,
+          "fail": 5115,
+          "survivors": 27653,
+          "odd_residues": 32768,
+          "fraction": 0.156097412109375,
+          "bound": 13.0,
+          "integer_lhs": 104652900,
+          "integer_rhs": 725849473024,
+          "ok": true
+        },
+        {
+          "B": 8,
+          "fail": 1986,
+          "survivors": 30782,
+          "odd_residues": 32768,
+          "fraction": 0.06060791015625,
+          "bound": 9.192388155425117,
+          "integer_lhs": 31553568,
+          "integer_rhs": 725849473024,
+          "ok": true
+        },
+        {
+          "B": 16,
+          "fail": 893,
+          "survivors": 31875,
+          "odd_residues": 32768,
+          "fraction": 0.027252197265625,
+          "bound": 6.5,
+          "integer_lhs": 12759184,
+          "integer_rhs": 725849473024,
+          "ok": true
+        },
+        {
+          "B": 32,
+          "fail": 262,
+          "survivors": 32506,
+          "odd_residues": 32768,
+          "fraction": 0.00799560546875,
+          "bound": 4.596194077712559,
+          "integer_lhs": 2196608,
+          "integer_rhs": 725849473024,
+          "ok": true
+        }
+      ],
+      "max_ratio_seen": 437.8938903808594,
+      "all_ok": true
+    }
+  ],
+  "large_threshold_scan_K16": {
+    "K": 16,
+    "checks": [
+      {
+        "B": 4096,
+        "fail": 0,
+        "survivors": 32768,
+        "odd_residues": 32768,
+        "fraction": 0.0,
+        "bound": 0.40625,
+        "integer_lhs": 0,
+        "integer_rhs": 725849473024,
+        "ok": true
+      },
+      {
+        "B": 65536,
+        "fail": 0,
+        "survivors": 32768,
+        "odd_residues": 32768,
+        "fraction": 0.0,
+        "bound": 0.1015625,
+        "integer_lhs": 0,
+        "integer_rhs": 725849473024,
+        "ok": true
+      },
+      {
+        "B": 1048576,
+        "fail": 0,
+        "survivors": 32768,
+        "odd_residues": 32768,
+        "fraction": 0.0,
+        "bound": 0.025390625,
+        "integer_lhs": 0,
+        "integer_rhs": 725849473024,
+        "ok": true
+      }
+    ],
+    "max_ratio_seen": 437.8938903808594,
+    "all_ok": true
+  },
+  "all_ok": true
+}

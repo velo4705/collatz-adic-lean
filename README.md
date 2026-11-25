@@ -1,11 +1,12 @@
 # collatz-adic-lean
 
 Kernel-checked Lean 4 formalizations surrounding the "Trailing Ones and
-High-Altitude Backbones" papers.  Nine verified modules are exported together
+High-Altitude Backbones" papers.  Eleven verified modules are exported together
 from the single root `CollatzAdicBase` and audited with `#print axioms` during
-every build.  The library proves 186 theorems/lemmas in total (183 in the nine
-audited modules, 3 in `Basic.lean`) with zero `sorry` and zero project-specific
-axioms.
+every build.  The library proves 239 theorems/lemmas in total (236 in the eleven
+audited modules, 3 in `Basic.lean`), with 293 declarations in the audited modules
+(236 theorems/lemmas, 55 `def`s, 2 `abbrev`s; 300 including the 7 declarations in
+`Basic.lean`), zero `sorry` and zero project-specific axioms.
 
 See [CORRIGENDUM.md](CORRIGENDUM.md) for the step-index correction in Lemma 3
 ($n_0 = 3$: the value 1 is reached at step 7, not step 6). A revised version of
@@ -40,7 +41,13 @@ anywhere: the full axiom audit is recorded in
 - `CollatzAdicBase/SyracuseLogDrift.lean` — accelerated odd-to-odd Syracuse step,
   exact $M$-step identity, geometric valuation law and cycle-minimum bound from
   continued-fraction gaps (Paper 9).  19 theorems/lemmas.
-- `CollatzAdicBase/Axioms.lean` — `#print axioms` audit over all nine modules,
+- `CollatzAdicBase/SyracuseRenewal.lean` — renewal of accelerated valuations at
+  half-step times, exact composition count, geometric MGF and exponential
+  contraction of non-contracting odd classes (Paper 10).  25 theorems/lemmas.
+- `CollatzAdicBase/ExcursionTail.lean` — prefix ratio bound, finite-modulus
+  excursion set and the uniform-in-horizon $26\,B^{-1/2}$ power-law tail
+  (Paper 11).  28 theorems/lemmas.
+- `CollatzAdicBase/Axioms.lean` — `#print axioms` audit over all eleven modules,
   run during `lake build`.
 
 ## Results
@@ -135,6 +142,30 @@ For odd $n$, $T_{\mathrm{Syr}}(n)=(3n+1)/2^{v_2(3n+1)}$:
   ($L=E+M\ge27\,869\,189$).  Script: `analysis/syracuse_log_drift.py`;
   data: `artifacts/syracuse_log_drift.json`.  Full write-up:
   [PAPER9_RESEARCH_SUMMARY.md](PAPER9_RESEARCH_SUMMARY.md).
+
+### Syracuse renewal (Paper 10, v1.4.0)
+
+- `glide_at_acc_times`: at the accelerated times $A_j$ the half-step orbit and
+  parity weight agree with the accelerated orbit and step count.
+- `compCount_eq_choose`: $M$-tuples of positive naturals summing to $E$ are
+  counted by $\binom{E-1}{M-1}$.
+- `mgfPartial_closed` / `mgf_lambda_closed`: exact rational MGF
+  $\mathbb E[x^a]=x/(2-x)=1/(2^{\lambda+1}-1)$ with finite remainder.
+- `syracuseFail_rational_decay`: at $M=5t$ the failing odd classes have density
+  at most $(24/25)^{5t}$.  Script: `analysis/syracuse_renewal.py`; data:
+  `artifacts/syracuse_renewal.json`; write-up:
+  [PAPER10_RESEARCH_SUMMARY.md](PAPER10_RESEARCH_SUMMARY.md).
+
+### Uniform excursion tail (Paper 11, v1.5.0)
+
+- `syracuseOrbit_ratio_le`: $n_j/n_0\le 3^j/2^{A_j}+(3^j-2^j)/(n_0\,2^j)$.
+- `excursionFailF`: odd residues mod $2^K$ whose prefix multiplier reaches $B$.
+- `excursionFailF_tail_uniform`: with the rational $\lambda=1/2$ tilt
+  $x=5/7$, $\beta=26/15$ and contraction $\rho=26/27$,
+  $\#\mathcal E\cdot\sqrt B\le 26\cdot2^{K-1}$ uniformly in horizon $M$ and
+  modulus $K$, i.e. $\mathbb P(\max_j 3^j/2^{A_j}\ge B)\le 26\,B^{-1/2}$.
+  Script: `analysis/excursion_tail.py`; data: `artifacts/excursion_tail.json`;
+  write-up: [PAPER11_RESEARCH_SUMMARY.md](PAPER11_RESEARCH_SUMMARY.md).
 
 ## Corrigendum
 
