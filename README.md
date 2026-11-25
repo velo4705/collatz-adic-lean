@@ -1,9 +1,9 @@
 # collatz-adic-lean
 
 Kernel-checked Lean 4 formalizations surrounding the "Trailing Ones and
-High-Altitude Backbones" papers.  Eight verified modules are exported together
+High-Altitude Backbones" papers.  Nine verified modules are exported together
 from the single root `CollatzAdicBase` and audited with `#print axioms` during
-every build.  The library proves 174 theorems/lemmas in total (171 in the eight
+every build.  The library proves 186 theorems/lemmas in total (183 in the nine
 audited modules, 3 in `Basic.lean`) with zero `sorry` and zero project-specific
 axioms.
 
@@ -37,7 +37,10 @@ anywhere: the full axiom audit is recorded in
 - `CollatzAdicBase/GlideMarkovChain.lean` — accelerated parity-vector branching,
   exact trajectory product bound, Terras injectivity and exponential survivor
   density decay (Paper 8).  30 theorems/lemmas, including the main density bound.
-- `CollatzAdicBase/Axioms.lean` — `#print axioms` audit over all eight modules,
+- `CollatzAdicBase/SyracuseLogDrift.lean` — accelerated odd-to-odd Syracuse step,
+  exact $M$-step identity, geometric valuation law and cycle-minimum bound from
+  continued-fraction gaps (Paper 9).  19 theorems/lemmas.
+- `CollatzAdicBase/Axioms.lean` — `#print axioms` audit over all nine modules,
   run during `lake build`.
 
 ## Results
@@ -114,6 +117,24 @@ $w_K(n)$ counting odd steps:
   density theorem in constructive form.  The exact $K=1,\dots,16$ comparison
   against Chernoff/Hoeffding bounds is in `analysis/glide_markov_chain.py` and
   `artifacts/glide_markov_chain.json`.
+
+### Syracuse log drift (Paper 9, v1.2.0)
+
+For odd $n$, $T_{\mathrm{Syr}}(n)=(3n+1)/2^{v_2(3n+1)}$:
+
+- `syracuseStep` and `syracuse_identity`: the exact $M$-step law
+  $n_M 2^{A_M}=3^M n_0+\sum_{j<M}3^{M-1-j}2^{A_j}$, $A_j=\sum_{i<j}a_i$.
+- `exactValF_card`: exactly $2^{K-a-1}$ odd residues mod $2^K$ have
+  $v_2(3n+1)=a$ for $1\le a<K$, giving the geometric law $\mathbb P(a=j)=2^{-j}$
+  and $\mathbb E[a]=2$, hence $\mathbb E[\log(n_M/n_0)]=M\log(3/4)+O(1/n_0)$.
+- `cycle_min_upper_bound`: $n_{\min}(2^E-3^M)\le\widetilde T_{\max}(M,E)
+  =2^{E-M}(3^M-2^M)$, linking the Diophantine gap to the cycle size.
+- Convergents of $\log_2 3$ with $q\le10^6$ give
+  $2^E-3^M>3^M\ln 2/10\,781\,874$; with the verified search bound $2^{40}$ the
+  least fraction in $(\log_2 3,\log_2(3+2^{-40}))$ is $17\,087\,915/10\,781\,274$
+  ($L=E+M\ge27\,869\,189$).  Script: `analysis/syracuse_log_drift.py`;
+  data: `artifacts/syracuse_log_drift.json`.  Full write-up:
+  [PAPER9_RESEARCH_SUMMARY.md](PAPER9_RESEARCH_SUMMARY.md).
 
 ## Corrigendum
 

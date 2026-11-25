@@ -1,12 +1,13 @@
-CollatzAdicBase — complete #print axioms audit (eight verified modules)
-Verified: lake -K jobs=1 build completed with zero errors and zero warnings.
+CollatzAdicBase — complete #print axioms audit (nine verified modules)
+Verified: lake -K jobs=1 build completed with zero errors and zero warnings (18274 jobs).
 Audited modules: RationalDescent, AlternatingGlide, FuelLaw, LatentSaturation,
-                Refueling, CycleExclusion, StoppingTimeDensity, GlideMarkovChain.
+                Refueling, CycleExclusion, StoppingTimeDensity, GlideMarkovChain,
+                SyracuseLogDrift.
 Every theorem depends only on Lean core axioms: propext, Classical.choice, Quot.sound.
 Zero sorryAx and zero project-specific axioms.
-Theorem count: 174 proven theorems/lemmas in total (171 across the eight audited
-modules and 3 in Basic.lean); 30 of them are in the new GlideMarkovChain module
-(17 theorems and 13 lemmas), of which 10 principal results are audited below.
+Theorem count: 186 proven theorems/lemmas in total (183 across the nine audited
+modules and 3 in Basic.lean); 19 of them are in the new SyracuseLogDrift module
+(2 theorems and 17 lemmas), of which 9 principal results are audited below.
 
 'CollatzAdicBase.FuelLaw.iterate_shortcut_formula' depends on axioms: [propext, Quot.sound]
 'CollatzAdicBase.FuelLaw.iterate_shortcut_odd' depends on axioms: [propext, Quot.sound]
@@ -67,3 +68,15 @@ modules and 3 in Basic.lean); 30 of them are in the new GlideMarkovChain module
 'CollatzAdicBase.GlideMarkovChain.survF_card_le_heavy' depends on axioms: [propext, Classical.choice, Quot.sound]
 'CollatzAdicBase.GlideMarkovChain.odd_survivor_decay' depends on axioms: [propext, Classical.choice, Quot.sound]
 'CollatzAdicBase.GlideMarkovChain.true_survivor_decay' depends on axioms: [propext, Classical.choice, Quot.sound]
+
+
+-- Syracuse log-drift module (Paper 9, v1.2.0): all 9 audited principal results
+'CollatzAdicBase.SyracuseLogDrift.v2_dvd' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CollatzAdicBase.SyracuseLogDrift.syracuseStep_mul_pow_v2' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CollatzAdicBase.SyracuseLogDrift.syracuseStep_odd' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CollatzAdicBase.SyracuseLogDrift.syracuse_identity' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CollatzAdicBase.SyracuseLogDrift.valWitness' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CollatzAdicBase.SyracuseLogDrift.unique_val_residue' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CollatzAdicBase.SyracuseLogDrift.exactValF_card' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CollatzAdicBase.SyracuseLogDrift.syracuseT_le_tildeTmax_of_pos' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CollatzAdicBase.SyracuseLogDrift.cycle_min_upper_bound' depends on axioms: [propext, Classical.choice, Quot.sound]

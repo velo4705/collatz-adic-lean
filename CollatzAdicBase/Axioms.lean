@@ -6,10 +6,11 @@ import CollatzAdicBase.LatentSaturation
 import CollatzAdicBase.CycleExclusion
 import CollatzAdicBase.StoppingTimeDensity
 import CollatzAdicBase.GlideMarkovChain
+import CollatzAdicBase.SyracuseLogDrift
 
 -- Axiom audit: every theorem below should depend only on Lean's core axioms
 -- (propext, Classical.choice, Quot.sound), with no sorryAx and no
--- project-specific axioms.  All seven verified modules are audited here.
+-- project-specific axioms.  All eight verified modules are audited here.
 
 #print axioms CollatzAdicBase.FuelLaw.iterate_shortcut_formula
 #print axioms CollatzAdicBase.FuelLaw.iterate_shortcut_odd
@@ -79,3 +80,12 @@ import CollatzAdicBase.GlideMarkovChain
 #print axioms CollatzAdicBase.GlideMarkovChain.survF_card_le_heavy
 #print axioms CollatzAdicBase.GlideMarkovChain.odd_survivor_decay
 #print axioms CollatzAdicBase.GlideMarkovChain.true_survivor_decay
+
+-- Syracuse log-drift module (Paper 9)
+#print axioms CollatzAdicBase.SyracuseLogDrift.syracuseStep_mul_pow_v2
+#print axioms CollatzAdicBase.SyracuseLogDrift.syracuseStep_odd
+#print axioms CollatzAdicBase.SyracuseLogDrift.syracuse_identity
+#print axioms CollatzAdicBase.SyracuseLogDrift.valWitness
+#print axioms CollatzAdicBase.SyracuseLogDrift.unique_val_residue
+#print axioms CollatzAdicBase.SyracuseLogDrift.exactValF_card
+#print axioms CollatzAdicBase.SyracuseLogDrift.cycle_min_upper_bound
