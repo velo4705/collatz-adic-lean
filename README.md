@@ -1,9 +1,9 @@
 # collatz-adic-lean
 
 Kernel-checked Lean 4 formalizations surrounding the "Trailing Ones and
-High-Altitude Backbones" papers.  Nine verified modules are exported together
+High-Altitude Backbones" papers.  Ten verified modules are exported together
 from the single root `CollatzAdicBase` and audited with `#print axioms` during
-every build.  The library proves 186 theorems/lemmas in total (183 in the nine
+every build.  The library proves 211 theorems/lemmas in total (208 in the ten
 audited modules, 3 in `Basic.lean`) with zero `sorry` and zero project-specific
 axioms.
 
@@ -40,7 +40,10 @@ anywhere: the full axiom audit is recorded in
 - `CollatzAdicBase/SyracuseLogDrift.lean` — accelerated odd-to-odd Syracuse step,
   exact $M$-step identity, geometric valuation law and cycle-minimum bound from
   continued-fraction gaps (Paper 9).  19 theorems/lemmas.
-- `CollatzAdicBase/Axioms.lean` — `#print axioms` audit over all nine modules,
+- `CollatzAdicBase/SyracuseRenewal.lean` — Syracuse renewal identity, exact
+  composition count and geometric MGF, and exponential decay of the
+  non-contracting odd classes (Paper 10).  25 theorems/lemmas.
+- `CollatzAdicBase/Axioms.lean` — `#print axioms` audit over all ten modules,
   run during `lake build`.
 
 ## Results
