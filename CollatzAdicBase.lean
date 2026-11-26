@@ -10,4 +10,5 @@ import CollatzAdicBase.GlideMarkovChain
 import CollatzAdicBase.SyracuseLogDrift
 import CollatzAdicBase.SyracuseRenewal
 import CollatzAdicBase.ExcursionTail
+import CollatzAdicBase.LogDensityContraction
 import CollatzAdicBase.Axioms

@@ -9,10 +9,12 @@ import CollatzAdicBase.GlideMarkovChain
 import CollatzAdicBase.SyracuseLogDrift
 import CollatzAdicBase.SyracuseRenewal
 import CollatzAdicBase.ExcursionTail
+import CollatzAdicBase.LogDensityContraction
 
 -- Axiom audit: every theorem below should depend only on Lean's core axioms
 -- (propext, Classical.choice, Quot.sound), with no sorryAx and no
--- project-specific axioms.  All eleven verified modules are audited here.
+-- project-specific axioms.  All twelve verified modules and all 91 audited
+-- declarations are covered here (90 printouts with core axioms, one axiom-free).
 
 #print axioms CollatzAdicBase.FuelLaw.iterate_shortcut_formula
 #print axioms CollatzAdicBase.FuelLaw.iterate_shortcut_odd
@@ -110,3 +112,15 @@ import CollatzAdicBase.ExcursionTail
 #print axioms CollatzAdicBase.ExcursionTail.oneStep_inj
 #print axioms CollatzAdicBase.ExcursionTail.valList_eq_of_modEq
 #print axioms CollatzAdicBase.ExcursionTail.excursionFailF_tail_uniform
+
+-- Log-density contraction module (Paper 12, Layer 7)
+#print axioms CollatzAdicBase.LogDensityContraction.valList_eq_of_ValSeq
+#print axioms CollatzAdicBase.LogDensityContraction.mem_syracuseFailF_iff_valList
+#print axioms CollatzAdicBase.LogDensityContraction.not_mem_syracuseFailF_contracts
+#print axioms CollatzAdicBase.LogDensityContraction.not_mem_excursionFailF_no_excursion
+#print axioms CollatzAdicBase.LogDensityContraction.oddFin_card_ge
+#print axioms CollatzAdicBase.LogDensityContraction.bounded_and_contracts_of_vals
+#print axioms CollatzAdicBase.LogDensityContraction.goodTrajectory_card_lower
+#print axioms CollatzAdicBase.LogDensityContraction.goodTrajectory_vals_of_residue
+#print axioms CollatzAdicBase.LogDensityContraction.goodTrajectory_bounded_and_contracts
+#print axioms CollatzAdicBase.LogDensityContraction.goodTrajectory_contracts_to_alpha

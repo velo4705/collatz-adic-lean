@@ -1,12 +1,17 @@
 # collatz-adic-lean
 
 Kernel-checked Lean 4 formalizations surrounding the "Trailing Ones and
-High-Altitude Backbones" papers.  Eleven verified modules are exported together
+High-Altitude Backbones" papers.  Twelve verified modules are exported together
 from the single root `CollatzAdicBase` and audited with `#print axioms` during
-every build.  The library proves 239 theorems/lemmas in total (236 in the eleven
-audited modules, 3 in `Basic.lean`), with 293 declarations in the audited modules
-(236 theorems/lemmas, 55 `def`s, 2 `abbrev`s; 300 including the 7 declarations in
-`Basic.lean`), zero `sorry` and zero project-specific axioms.
+every build.  The library proves 257 theorems/lemmas in total (254 in the twelve
+audited modules, 3 in `Basic.lean`), with 314 declarations in the audited modules
+(254 theorems/lemmas, 58 `def`s, 2 `abbrev`s; 321 including the 7 declarations in
+`Basic.lean`), zero `sorry` and zero project-specific axioms.  Counts are the
+top-level `lemma`/`theorem`/`def`/`abbrev` declarations in each verified module,
+excluding the `Axioms.lean` audit file and `Basic.lean`.  The unified
+[AXIOM_AUDIT.txt](AXIOM_AUDIT.txt) covers 91 declarations across all twelve
+modules (90 depending only on `propext`, `Classical.choice`, `Quot.sound`;
+`StoppingTimeDensity.k8_partition` depends on no axioms).
 
 See [CORRIGENDUM.md](CORRIGENDUM.md) for the step-index correction in Lemma 3
 ($n_0 = 3$: the value 1 is reached at step 7, not step 6). A revised version of
@@ -47,7 +52,10 @@ anywhere: the full axiom audit is recorded in
 - `CollatzAdicBase/ExcursionTail.lean` — prefix ratio bound, finite-modulus
   excursion set and the uniform-in-horizon $26\,B^{-1/2}$ power-law tail
   (Paper 11).  28 theorems/lemmas.
-- `CollatzAdicBase/Axioms.lean` — `#print axioms` audit over all eleven modules,
+- `CollatzAdicBase/LogDensityContraction.lean` — combined good residue set,
+  bounded-excursion contraction, explicit density lower bound and dyadic
+  logarithmic decay (Paper 12).  11 theorems/lemmas.
+- `CollatzAdicBase/Axioms.lean` — `#print axioms` audit over all twelve modules,
   run during `lake build`.
 
 ## Results
@@ -166,6 +174,24 @@ For odd $n$, $T_{\mathrm{Syr}}(n)=(3n+1)/2^{v_2(3n+1)}$:
   modulus $K$, i.e. $\mathbb P(\max_j 3^j/2^{A_j}\ge B)\le 26\,B^{-1/2}$.
   Script: `analysis/excursion_tail.py`; data: `artifacts/excursion_tail.json`;
   write-up: [PAPER11_RESEARCH_SUMMARY.md](PAPER11_RESEARCH_SUMMARY.md).
+
+### Bounded-excursion contraction (Paper 12, v1.6.0)
+
+- `goodTrajectoryF K M B`: odd residues mod $2^K$ avoiding both terminal
+  non-contraction and intermediate upward excursion.
+- `goodTrajectory_card_lower`: at $K=8t$, $M=5t$ the good density is at least
+  $1-(24/25)^{5t}-26/\sqrt B$ (union bound of the Layer 5 and Layer 6 tails).
+- `goodTrajectory_bounded_and_contracts`: if the residue determines the first
+  $M$ valuations ($A_M+1\le K$) and $n_0>2^{K-1}(3/2)^M$, then
+  $n_j\le(B+1)n_0$ for $1\le j\le M$ and $n_M<n_0$;
+  `goodTrajectory_contracts_to_alpha` gives any target factor
+  $\alpha\ge 1-2^{-(K-1)}$.
+- Coupling $M=5t\asymp\log\log X$ and $B\asymp(\log X)^c$ yields exceptional
+  density $O((\log X)^{-\gamma})$, $\gamma=\min(0.20411\lambda,c/2)$, on dyadic
+  intervals — logarithmic, not power-of-$X$, decay.
+  Script: `analysis/log_density_contraction.py`; data:
+  `artifacts/log_density_contraction.json`; write-up:
+  [PAPER12_RESEARCH_SUMMARY.md](PAPER12_RESEARCH_SUMMARY.md).
 
 ## Corrigendum
 
