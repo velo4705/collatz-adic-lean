@@ -1,3 +1,101 @@
+CollatzAdicBase — complete #print axioms audit (eleven verified modules)
+Verified: lake -K jobs=1 build completed with zero errors and zero warnings (18278 jobs).
+Audited modules: RationalDescent, AlternatingGlide, FuelLaw, LatentSaturation,
+                 Refueling, CycleExclusion, StoppingTimeDensity, GlideMarkovChain,
+                 SyracuseLogDrift, SyracuseRenewal, ExcursionTail.
+Every theorem depends only on Lean core axioms: propext, Classical.choice, Quot.sound.
+No placeholder proofs and zero project-specific axioms.
+Theorem count: 239 proven theorems/lemmas in total (236 across the eleven audited
+modules and 3 in Basic.lean).  Declaration count: 293 across the eleven audited
+modules (236 theorems/lemmas, 55 defs, 2 abbrevs); 300 including Basic.lean
+(7 declarations).  Every axiom printout emitted by the build is reproduced below.
+
+'CollatzAdicBase.LatentSaturation.gcd_lift' depends on axioms: [propext, Quot.sound]
+'CollatzAdicBase.LatentSaturation.ratStep_lift' depends on axioms: [propext, Quot.sound]
+'CollatzAdicBase.LatentSaturation.lift_congruence' depends on axioms: [propext]
+'CollatzAdicBase.LatentSaturation.cycle_dvd_pow_sub' depends on axioms: [propext, Quot.sound]
+'CollatzAdicBase.LatentSaturation.den_at_lifted_level' depends on axioms: [propext, Quot.sound]
+'CollatzAdicBase.LatentSaturation.three_free_preserved' depends on axioms: [propext, Quot.sound]
+'CollatzAdicBase.LatentSaturation.ratStep_valid' depends on axioms: [propext, Quot.sound]
+ℹ [18258/18278] Replayed CollatzAdicBase.StoppingTimeDensity
+'CollatzAdicBase.StoppingTimeDensity.two_block_affine_plus' depends on axioms: [propext, Quot.sound]
+'CollatzAdicBase.StoppingTimeDensity.two_block_affine' depends on axioms: [propext, Quot.sound]
+'CollatzAdicBase.StoppingTimeDensity.two_block_composition' depends on axioms: [propext, Quot.sound]
+'CollatzAdicBase.StoppingTimeDensity.two_block_refuel_congruence' depends on axioms: [propext, Quot.sound]
+'CollatzAdicBase.StoppingTimeDensity.two_block_drift_threshold' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CollatzAdicBase.StoppingTimeDensity.drop_one_mod_four' depends on axioms: [propext, Quot.sound]
+'CollatzAdicBase.StoppingTimeDensity.drop_three_mod_sixteen' depends on axioms: [propext, Quot.sound]
+'CollatzAdicBase.StoppingTimeDensity.template_stop' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CollatzAdicBase.StoppingTimeDensity.cert8_stop' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CollatzAdicBase.StoppingTimeDensity.k8_partition' does not depend on any axioms
+ℹ [18260/18278] Replayed CollatzAdicBase.GlideMarkovChain
+'CollatzAdicBase.GlideMarkovChain.glide_identity' depends on axioms: [propext, Quot.sound]
+'CollatzAdicBase.GlideMarkovChain.glideC_bound' depends on axioms: [propext, Quot.sound]
+'CollatzAdicBase.GlideMarkovChain.glide_drop' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CollatzAdicBase.GlideMarkovChain.parity_agree_of_dvd' depends on axioms: [propext, Quot.sound]
+'CollatzAdicBase.GlideMarkovChain.parityMap_injective_mod' depends on axioms: [propext, Quot.sound]
+'CollatzAdicBase.GlideMarkovChain.glideVal_child' depends on axioms: [propext, Quot.sound]
+'CollatzAdicBase.GlideMarkovChain.heavyCount_tilt' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CollatzAdicBase.GlideMarkovChain.heavyCount_exp' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CollatzAdicBase.GlideMarkovChain.heavyF_card' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CollatzAdicBase.GlideMarkovChain.parityList_injective' depends on axioms: [propext, Quot.sound]
+'CollatzAdicBase.GlideMarkovChain.survF_card_le_heavy' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CollatzAdicBase.GlideMarkovChain.odd_survivor_decay' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CollatzAdicBase.GlideMarkovChain.true_survivor_decay' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [18264/18278] Replayed CollatzAdicBase.RationalDescent
+'CollatzAdicBase.lemma_2_1_stability' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CollatzAdicBase.lemma_2_2_one_three_per_odd_step' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CollatzAdicBase.lemma_2_3_forced_halving' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CollatzAdicBase.lemma_2_4_and_cor_2_5_three_free_cycles' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CollatzAdicBase.theorem_1_pure_three_power_descent' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CollatzAdicBase.verification_pure_three_power_k_le_six' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CollatzAdicBase.verification_all_reduced_small_k' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [18266/18278] Replayed CollatzAdicBase.CycleExclusion
+'CollatzAdicBase.CycleExclusion.step_three_free' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CollatzAdicBase.CycleExclusion.denom_const_of_three_free' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CollatzAdicBase.CycleExclusion.cycleAcc_spec' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CollatzAdicBase.CycleExclusion.cycle_sum_identity' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CollatzAdicBase.CycleExclusion.cycle_dvd' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CollatzAdicBase.CycleExclusion.one_odd_step_le_denominator' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CollatzAdicBase.CycleExclusion.no_integer_cycles_M_le_six' depends on axioms: [propext]
+'CollatzAdicBase.CycleExclusion.no_single_block_integer_cycles' depends on axioms: [propext]
+'CollatzAdicBase.CycleExclusion.cycT_patterns_odd_M_le_six' depends on axioms: [propext]
+'CollatzAdicBase.CycleExclusion.cycT_three_free' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [18268/18278] Replayed CollatzAdicBase.SyracuseLogDrift
+'CollatzAdicBase.SyracuseLogDrift.v2_dvd' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CollatzAdicBase.SyracuseLogDrift.syracuseStep_mul_pow_v2' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CollatzAdicBase.SyracuseLogDrift.syracuseStep_odd' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CollatzAdicBase.SyracuseLogDrift.syracuse_identity' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CollatzAdicBase.SyracuseLogDrift.valWitness' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CollatzAdicBase.SyracuseLogDrift.unique_val_residue' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CollatzAdicBase.SyracuseLogDrift.exactValF_card' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CollatzAdicBase.SyracuseLogDrift.syracuseT_le_tildeTmax_of_pos' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CollatzAdicBase.SyracuseLogDrift.cycle_min_upper_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [18270/18278] Replayed CollatzAdicBase.SyracuseRenewal
+'CollatzAdicBase.SyracuseRenewal.glideVal_eq_div_pow_of_v2' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CollatzAdicBase.SyracuseRenewal.glideW_v2_eq_one' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CollatzAdicBase.SyracuseRenewal.glide_at_acc_times' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CollatzAdicBase.SyracuseRenewal.glideW_sum_succ' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CollatzAdicBase.SyracuseRenewal.syracuseFail_subset_survivor' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CollatzAdicBase.SyracuseRenewal.syracuseFail_decay' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CollatzAdicBase.SyracuseRenewal.syracuseFail_rational_decay' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CollatzAdicBase.SyracuseRenewal.compCount_eq_choose' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CollatzAdicBase.SyracuseRenewal.mgfPartial_closed' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CollatzAdicBase.SyracuseRenewal.mgf_lambda_closed' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [18272/18278] Replayed CollatzAdicBase.ExcursionTail
+'CollatzAdicBase.ExcursionTail.syracuseOrbit_ratio_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CollatzAdicBase.ExcursionTail.excursionFailF' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CollatzAdicBase.ExcursionTail.excursionFailF_orbit_ge' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CollatzAdicBase.ExcursionTail.oneStep_inj' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CollatzAdicBase.ExcursionTail.valList_eq_of_modEq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CollatzAdicBase.ExcursionTail.excursionFailF_tail_uniform' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [18274/18278] Replayed CollatzAdicBase.Axioms
 'CollatzAdicBase.FuelLaw.iterate_shortcut_formula' depends on axioms: [propext, Quot.sound]
 'CollatzAdicBase.FuelLaw.iterate_shortcut_odd' depends on axioms: [propext, Quot.sound]
 'CollatzAdicBase.FuelLaw.iterate_shortcut_strict_mono' depends on axioms: [propext, Quot.sound]
@@ -83,29 +181,3 @@
 'CollatzAdicBase.ExcursionTail.oneStep_inj' depends on axioms: [propext, Classical.choice, Quot.sound]
 'CollatzAdicBase.ExcursionTail.valList_eq_of_modEq' depends on axioms: [propext, Classical.choice, Quot.sound]
 'CollatzAdicBase.ExcursionTail.excursionFailF_tail_uniform' depends on axioms: [propext, Classical.choice, Quot.sound]
-'CollatzAdicBase.LogDensityContraction.valList_eq_of_ValSeq' depends on axioms: [propext, Classical.choice, Quot.sound]
-'CollatzAdicBase.LogDensityContraction.mem_syracuseFailF_iff_valList' depends on axioms: [propext,
- Classical.choice,
- Quot.sound]
-'CollatzAdicBase.LogDensityContraction.not_mem_syracuseFailF_contracts' depends on axioms: [propext,
- Classical.choice,
- Quot.sound]
-'CollatzAdicBase.LogDensityContraction.not_mem_excursionFailF_no_excursion' depends on axioms: [propext,
- Classical.choice,
- Quot.sound]
-'CollatzAdicBase.LogDensityContraction.oddFin_card_ge' depends on axioms: [propext, Classical.choice, Quot.sound]
-'CollatzAdicBase.LogDensityContraction.bounded_and_contracts_of_vals' depends on axioms: [propext,
- Classical.choice,
- Quot.sound]
-'CollatzAdicBase.LogDensityContraction.goodTrajectory_card_lower' depends on axioms: [propext,
- Classical.choice,
- Quot.sound]
-'CollatzAdicBase.LogDensityContraction.goodTrajectory_vals_of_residue' depends on axioms: [propext,
- Classical.choice,
- Quot.sound]
-'CollatzAdicBase.LogDensityContraction.goodTrajectory_bounded_and_contracts' depends on axioms: [propext,
- Classical.choice,
- Quot.sound]
-'CollatzAdicBase.LogDensityContraction.goodTrajectory_contracts_to_alpha' depends on axioms: [propext,
- Classical.choice,
- Quot.sound]
